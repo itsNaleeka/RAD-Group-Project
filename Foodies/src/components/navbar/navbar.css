@@ -1,0 +1,53 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+}
+.navbar .logo {
+    width: 9.25rem;
+}
+.navbar-menu{
+    gap: 1.75rem;
+    color: #49557e;
+    list-style: none;
+    font-size: 1.25rem;
+}
+.navbar-menu li {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+.navbar-menu li::after{
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    transition: width 0.5s ease;
+    background: tomato;
+}
+.navbar-menu li.active::after{
+    width: 100%;
+}
+.navbar-menu li.active {
+    font-weight: 500;
+    color: tomato;
+}
+.navbar-right{
+    gap: 2.5rem;
+}
+.navbar-right button{
+    padding: 0.75rem 1.75rem;
+    color: #49557e;
+    border: 1px solid tomato;
+    border-radius: 3.25rem;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.25s ease;
+}
+.navbar-right button:hover {
+    background: #fff4f2;
+}
