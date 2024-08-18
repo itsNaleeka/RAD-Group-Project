@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    background-color: rgb(19, 19, 86);
+}
+
+.container2{
+    display: flex;
+    padding-left: 0%;
+}
+
+.allcontent{
+    display: flex;
+}

@@ -1,11 +1,34 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './Navbar';
+import Sidebar from './components/Sidebar';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Manage from './components/Manage';
+
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
+     <Router>
+        <div className='container1'>
+          <Navbar />
+        </div>
+        <div className='container'>
+          <Sidebar/>
+          <div className='container2'>
+          <Routes className="abc">
+              <Route path="/" element={<Home />} />
+              <Route path="/Manage" element={<Manage/>} />
+              <Route path="/About" element={<About/>} />
+              <Route path="/Contact" element={<Contact/>} />
+          </Routes>
+          </div>
+          
+          </div>
+      </Router>
     </div>
   );
 }
