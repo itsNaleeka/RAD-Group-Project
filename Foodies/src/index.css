@@ -1,26 +1,76 @@
 @import url(https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900);
+
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --black-1: #1e1e1e;
+    --hover-primary-bg: rgb(255, 228, 223);
+}
+body {
+    min-height: 100vh;
+    font-family: "Outfit", sans-serif;
+}
+button{
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: inherit;
+    text-transform: capitalize;
+    font-family: inherit;
+    transition: background 0.25s ease-in-out, scale 0.25s ease-in-out;
+}
+button:active{
+    scale: 0.9;
+}
+button:hover{
+    background: rgb(255, 119, 95);
+}
+.primaryBtn {
+    background: var(--black-1);
+    color: white;
+}
+.btn-2{
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    color: white;
+    background: tomato;
+    font-weight: 500;
+}
+.primaryBtn:hover {
+    background: rgb(59, 59, 59);
 }
 a {
-  text-decoration: none;
-  color: inherit;
-  font-family: inherit;
+    text-decoration: none;
+    color: inherit;
 }
-body{
-  font-family: Outfit, sans-serif;
-  min-height: 100vh;
+.capitalize{
+    text-transform: capitalize;
 }
 .app {
-  width: 80%;
-  margin: auto;
+    width: 80%;
+    margin: auto;
 }
 .row{
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
-.capitalize {
-  text-transform: capitalize;
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        left: -2rem;
+    }
+    100%     {
+        opacity: 1;
+    }
 }
