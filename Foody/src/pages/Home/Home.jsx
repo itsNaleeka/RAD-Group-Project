@@ -4,13 +4,13 @@ import ExploreMenu from "../../components/exploreMenu/ExploreMenu";
 import FoodDisplay from "../../components/foodDisplay/foodDisplay";
 
 function Home() {
-  const [category, setCategory] = useState("All")
+	const [category, setCategory] = useState("All");
 
 	return (
 		<>
 			<Header />
-      <ExploreMenu category={category} setCategory={setCategory} />
-      <FoodDisplay category={category} />
+			<ExploreMenu category={category} setCategory={setCategory} />
+			<FoodDisplay category={category} />
 		</>
 	);
 }

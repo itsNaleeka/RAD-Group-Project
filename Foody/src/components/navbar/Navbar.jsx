@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
 	<div className="navbar row">
-		<img src={assets.logo} alt="" />
+		<img src={assets.logo} alt="" className='logo' />
 		<ul className="navbar-menu capitalize row">
 			<li onClick={() => setMenu("home")} className={menu == 'home' ? 'active' : ''}>Home</li>
 			<li onClick={() => setMenu("menu")} className={menu == 'menu' ? 'active' : ''}>Menu</li>
