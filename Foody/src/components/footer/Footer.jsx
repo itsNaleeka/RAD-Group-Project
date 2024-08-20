@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 
 function Footer() {
 	return (
-		<div className="footer capitalize col">
+		<div className="footer capitalize col" id="footer">
 			<div className="footer-content row">
 				<div className="company col">
 					<img src={assets.logo} alt="Foody logo" />

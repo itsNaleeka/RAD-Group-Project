@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
+import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
 	const [menu, setMenu] = useState("home")
 
   return (
 	<div className="navbar row">
 		<img src={assets.logo} alt="" className='logo' />
 		<ul className="navbar-menu capitalize row">
-			<li onClick={() => setMenu("home")} className={menu == 'home' ? 'active' : ''}>Home</li>
-			<li onClick={() => setMenu("menu")} className={menu == 'menu' ? 'active' : ''}>Menu</li>
-			<li onClick={() => setMenu("about")} className={menu == 'about' ? 'active' : ''}>About us</li>
-			<li onClick={() => setMenu("contact")} className={menu == 'contact' ? 'active' : ''}>Contact Us</li>
+			<Link to="/" onClick={() => setMenu("home")} className={menu == 'home' ? 'active' : ''}>Home</Link>
+			<a href='#explore-menu' onClick={() => setMenu("menu")} className={menu == 'menu' ? 'active' : ''}>Menu</a>
+			<a href='#' onClick={() => setMenu("about")} className={menu == 'about' ? 'active' : ''}>About us</a>
+			<a href='#footer' onClick={() => setMenu("contact")} className={menu == 'contact' ? 'active' : ''}>Contact Us</a>
 		</ul>
 		<div className="navbar-btns row">
 			<img src={assets.search_icon} alt="search icon" />
@@ -20,7 +21,7 @@ const Navbar = () => {
 				<img src={assets.basket_icon} alt="cart" />
 				<div className="dot"></div>
 			</div>
-			<button className='primaryBtn'>log in</button>
+			<button onClick={() => setShowLogin(true)} className='primaryBtn'>log in</button>
 		</div>
 	</div>
   )

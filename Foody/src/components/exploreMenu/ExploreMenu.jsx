@@ -5,7 +5,7 @@ import { menu_list } from '../../assets/assets'
 function ExploreMenu( {category, setCategory} ) {
   return (
     <div className="explore-menu" id="explore-menu">
-        <h1>Explore our menu</h1>
+        <h1 className='capitalize'>Explore our menu</h1>
         <p>Discover flavor-packed dishes at Foody. From savory to sweet, our menu delights every craving. Bon appétit!</p>
         <div className="explore-menu-list">
             {menu_list.map( (item, index) => {
