@@ -60,3 +60,27 @@ li.active::after{
     border-radius: 50%;
     background: tomato;
 }
+@media (max-width: 900px) {
+    .navbar .logo {
+        width: 5rem;
+    }
+    .navbar-menu {
+        gap: 0.25rem;
+        font-size: 1rem;
+    }
+    .navbar-btns{
+        gap: 0.75rem;
+    }
+    .navbar-btns img {
+        width: 1.25rem;
+    }
+    .navbar-btns button {
+        padding: 0.25rem 0.75rem;
+        width: max-content;
+    }
+}
+@media (max-width: 760px) {
+    .navbar-menu {
+        display: none !important;
+    }
+}
