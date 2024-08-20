@@ -8,7 +8,7 @@
 .navbar-btns {
     gap: 1.5rem;
 }
-.navbar-menu li {
+.navbar-menu > * {
     cursor: pointer;
     padding: 0.25rem 1rem;
     font-weight: 500;
@@ -17,10 +17,10 @@
     transition: background 0.3s ease-in-out, scale 0.25s ease-in-out;
     position: relative;
 }
-.navbar-menu li:hover {
+.navbar-menu > *:hover {
     background: var(--hover-primary-bg);
 }
-.navbar-menu li:active{
+.navbar-menu > *:active{
     scale: 0.9;
 }
 .navbar-btns button {
@@ -29,10 +29,10 @@
     transition: background 0.15s ease-in-out, scale 0.25s ease-in-out;
     font-size: 1rem;
 }
-li.active {
+.navbar-menu > *.active {
     background: var(--hover-primary-bg);
 }
-li::after{
+.navbar-menu > *::after{
     content: "";
     position: absolute;
     bottom: 0;
@@ -45,7 +45,7 @@ li::after{
     border-radius: 0.5rem 0.5rem 0 0;
     transition: width 0.25s ease-in-out;
 }
-li.active::after{
+.navbar-menu > *.active::after{
     width: 100%;
 }
 .navbar-cart-icon {

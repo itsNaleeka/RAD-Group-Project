@@ -9,6 +9,9 @@
     --black-1: #1e1e1e;
     --hover-primary-bg: rgb(255, 228, 223);
 }
+html{
+    scroll-behavior: smooth;
+}
 body {
     min-height: 100vh;
     font-family: "Outfit", sans-serif;
