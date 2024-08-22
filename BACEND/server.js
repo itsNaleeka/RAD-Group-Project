@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true}));//parses the url in to the applic
 
 //Database connection
 mongoose.connect(MONGODB_URI,{
-    useNewUrlParseruseNewUrlParser: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true,
 })
 .then(() => {
@@ -35,7 +35,6 @@ mongoose.connect(MONGODB_URI,{
     });
 
 
-const RiderRouter = require("./routes/Riders.js");//import module
-
+const RiderRouter = require("./routes/Riders");//import module
 app.use("/riders", RiderRouter );//line the express app to use the riderrouter
 
