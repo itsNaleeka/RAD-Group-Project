@@ -55,6 +55,6 @@ const riderSchema = new Schema({
 })
 
 
-const rider = mongoose.model("Rider",riderSchema );
+const Rider = mongoose.model("riders",riderSchema );
 
-module.exports = rider;
+module.exports = Rider;
