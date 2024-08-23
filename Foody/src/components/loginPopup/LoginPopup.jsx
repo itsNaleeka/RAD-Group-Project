@@ -62,10 +62,11 @@ function LoginPopup({ setShowLogin }) {
 				<button>
 					{currState === "login" ? "Login" : "create account"}
 				</button>
-				<div className="popupState">
+				<div className="popupState capitalize">
+					<hr />
 					{currState === "login" ? (
 						<p>
-							Doesn't have an account?{" "}
+							Don't have an account?{" "}
 							<span onClick={() => setCurrState("signup")}>
 								Sign up
 							</span>

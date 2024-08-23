@@ -1,5 +1,6 @@
+
 .login-popup{
-    position: absolute;
+    position: fixed;
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -13,10 +14,10 @@
     border-radius: 1.25rem;
     padding: 2rem;
     gap: 2rem;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn-top 0.5s ease;
 }
 .login-popup-container input{
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 1.75rem;
     border-radius: 0.5rem;
     border: 1px solid #d4d4d4;
 }
@@ -29,16 +30,47 @@
     align-self: flex-start;
     gap: 0.5rem;
     font-size: 0.9rem;
+    margin-bottom: -1rem;
 }
 label{
     cursor: pointer;
 }
-input[type="checkbox"]{
+input[type="checkbox"] {
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+    padding: 0;
+}
+input[type="checkbox"]:checked {
+    background-color: tomato;
+    border-color: tomato;
+    position: relative;
+}
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.8);
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+}
+
+input[type="checkbox"] ~ label {
+    user-select: none;
 }
 .popup-title{
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
 }
 .popup-inputs {
     gap: 1rem;
@@ -49,4 +81,18 @@ input[type="checkbox"]{
 }
 .popup-title img{
     cursor: pointer;
+}
+.login-popup-container hr{
+    margin-bottom: 1rem;
+    border: 0;
+    height: 1px;
+    background: rgb(204, 204, 204);
+}
+.login-popup-container button{
+    background: tomato;
+    color: white;
+    font-weight: 500;
+}
+.login-popup-container button:hover{
+    background: rgb(255, 126, 103);
 }

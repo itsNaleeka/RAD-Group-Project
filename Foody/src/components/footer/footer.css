@@ -16,6 +16,7 @@
 .footer-content {
     width: 90%;
     justify-content: space-between;
+    align-items: flex-start !important;
 }
 .footer-content > div {
     gap: 1rem;
