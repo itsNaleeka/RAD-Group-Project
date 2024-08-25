@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Rider = require("../models/rider.js"); // Ensure this model is correctly defined in models
+const Rider = require("../models/rider.js");  // Ensure this model is correctly defined in models
 
 // Create and save a new rider
-router.post("/add", async (req, res) => {
+router.post("/add", async(req, res) => {
   const { name, nic, address, phone, vehicleType, vehicleNumber } = req.body;
 
   try {

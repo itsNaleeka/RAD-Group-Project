@@ -9,7 +9,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 
-axios.defaults.baseURL = "http://localhost:5000/"//backend url include
+axios.defaults.baseURL = "http://localhost:8070/"//backend url include
 
 function App() {
 
@@ -20,8 +20,9 @@ function App() {
         <div className='container1'>
           <Navbar />
         </div>
-        <div className='container'>
+        <div className='container2'>
           <Sidebar/>
+           
           <div className='container2'>
           <Routes className="abc">
               <Route path="/" element={<Home />} />
@@ -29,8 +30,7 @@ function App() {
               <Route path="/Contact" element={<Contact/>} />
           </Routes>
           </div>
-          
-          </div>
+          </div> 
       </Router>
     </div>
   );

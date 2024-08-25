@@ -1,10 +1,10 @@
 import React from 'react';
-import { IoCloseCircleOutline } from "react-icons/io5"; // Make sure to install react-icons
+import { IoCloseCircleOutline } from "react-icons/io5";
 import "./RiderForm.css";
 
 function RiderForm({ handleSubmit, handleOnChange, handleClose, reset }) {
   return (
-    <div className="addContainer">
+    <div className='form'>
       <form onSubmit={handleSubmit}>
         <div className="close-btn" onClick={handleClose}>
           <IoCloseCircleOutline />
@@ -15,16 +15,16 @@ function RiderForm({ handleSubmit, handleOnChange, handleClose, reset }) {
           id="name"
           name="name"
           onChange={handleOnChange}
-          value={reset.name}
+          value={reset.name || ''}
         />
 
         <label htmlFor="address">Address</label>
         <input
-          type="address"
+          type="text"
           id="address"
           name="address"
           onChange={handleOnChange}
-          value={reset.address}
+          value={reset.address || ''}
         />
 
         <label htmlFor="nic">National ID Number</label>
@@ -33,7 +33,7 @@ function RiderForm({ handleSubmit, handleOnChange, handleClose, reset }) {
           id="nic"
           name="nic"
           onChange={handleOnChange}
-          value={reset.nic}
+          value={reset.nic || ''}
         />
 
         <label htmlFor="phone">Phone Number</label>
@@ -42,7 +42,7 @@ function RiderForm({ handleSubmit, handleOnChange, handleClose, reset }) {
           id="phone"
           name="phone"
           onChange={handleOnChange}
-          value={reset.phone}
+          value={reset.phone || ''}
         />
 
         <label htmlFor="vehicleType">Vehicle Type</label>
@@ -50,7 +50,7 @@ function RiderForm({ handleSubmit, handleOnChange, handleClose, reset }) {
           id="vehicleType"
           name="vehicleType"
           onChange={handleOnChange}
-          value={reset.vehicleType}
+          value={reset.vehicleType || ''}
         >
           <option value="">Select Vehicle Type</option>
           <option value="Car">Car</option>
@@ -66,10 +66,10 @@ function RiderForm({ handleSubmit, handleOnChange, handleClose, reset }) {
           id="vehicleNumber"
           name="vehicleNumber"
           onChange={handleOnChange}
-          value={reset.vehicleNumber}
+          value={reset.vehicleNumber || ''}
         />
 
-        <button className="submit" onClick={handleClose}>Submit</button>
+        <button className="submit" type="submit">Submit</button>
       </form>
     </div>
   );

@@ -1,5 +1,5 @@
 /* Container Styles */
-.content {
+.contant {
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -7,6 +7,10 @@
     font-family: Arial, sans-serif;
   }
   
+.content2{
+  display: flex;
+}
+
   /* Contact Title */
   .contact {
     font-size: 36px;

@@ -1,14 +1,114 @@
-.content2{
+/* General Layout */
+.content2 {
   display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  width: 100%;
 }
 
-.container{
+
+/* Sidebar */
+.sidebar {
+  height: 100vh;
+  background: #06011d;
+  color: #ecf0f1;
   display: flex;
+  flex-direction: column;
+  padding: 20px; /* Added padding */
+  transition: width 0.3s ease-in-out; /* Smooth transition on hover */
 }
 
+/* Sidebar Collapse for Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60%;
+    height: auto;
+  }
+}
+
+/* Sidebar Admin Title */
+.admin {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Sidebar Menu */
+.menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+  border-radius: 5px;
+}
+
+.menu li:hover {
+  background-color: rgba(39, 45, 239, 0.8);
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 24px; /* Slightly larger icons */
+  color: #ffffff;
+}
+
+.name {
+  font-size: 18px;
+  color: #ecf0f1;
+}
+
+/* Table Content */
 .tablecontent {
-  padding-left: 10%;
-  background-color: none;
+  flex: 1;
+  padding: 20px; /* Added padding */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+th {
+  background-color: #2f0aeb;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+td, tr {
+  padding: 15px; /* Increased padding */
+  border-bottom: 1px solid #ddd;
+  text-align: left; /* Align text to the left */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Softer hover effect */
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 .add {
@@ -20,137 +120,45 @@
   background-color: #218838;
 }
 
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: rgb(4, 4, 70);
-    color: #ecf0f1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .admin {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .menu {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .menu li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+.delete {
+  background-color: #d9534f;
+  color: white;
+}
 
-  
-  .menu li:hover {
-    background-color:rgb(39, 45, 239);
+.delete:hover {
+  background-color: #c9302c;
+}
+
+.update {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.update:hover {
+  background-color: #31b0d5;
+}
+
+.edit {
+  background-color: #5bde71;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #247c07;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .tablecontent {
     padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .icon {
-    margin-right: 10px;
-    font-size: 20px;
   }
 
-  .containt {
-    padding-bottom: 20px;
-    padding-left: 50px;
-    font-family: Arial, sans-serif;
-    align-items: center;
-    padding-right: 0;
-    padding-right: -50px;
-  }
-  
-  h4 {
-    margin-bottom: 20px;
-    padding : 20px;
-    padding-left: 30%;
-    align-items: center;
-    font-size: 50px;
-    font-family :Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #ddd;
-  }
-  
-  table {
-    width: 140%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    padding-left: 30px;
+  table, th, td {
+    font-size: 14px; /* Adjust font size for small screens */
   }
 
-  
-  td,tr {
-    padding: 12px;
-    border-bottom: 5px solid white;
-    text-align: center;
+  .sidebar {
+    width: 100%;
+    height: auto;
   }
-  
-  th {
-    background-color: #2f0aeb;
-    padding: 20px;
-    color: white;
-    align-items: center;
-  }
-  
-  tr {
-    background-color: #f1f1f1;
-  }
-
-  tr:hover {
-    background-color: gray;
-  }
-  
-  button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 5px;
-    font-size: 14px;
-  }
-  
-  .delete {
-    background-color: #d9534f;
-    color: white;
-  }
-  
-  .delete:hover {
-    background-color: #c9302c;
-  }
-  
-  .update {
-    background-color: #5bc0de;
-    color: white;
-  }
-  
-  .update:hover {
-    background-color: #31b0d5;
-  }
-  
-  .edit {
-    background-color: #5bde71;
-    color: white;
-  }
-  
-  .edit:hover {
-    background-color: #247c07;
-  }
-  
-  .name {
-    font-size: 18px;
-    color: #ecf0f1;
-    margin-left: 10px;
-    transition: color 0.3s;
-  }
+}

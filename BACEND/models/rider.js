@@ -45,13 +45,13 @@ const riderSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        validate: {
+       /* validate: {
             validator: function(v) {
                 // Common vehicle number formats in Sri Lanka (e.g., ABC-1234, WP ABC-1234)
-                return /^[A-Z]{2,3}-\d{4}$/.test(v) || /^[A-Z]{2}\s[A-Z]{2,3}-\d{4}$/.test(v);
+               // return /^[A-Z]{2,3}-\d{4}$/.test(v) || /^[A-Z]{2}\s[A-Z]{2,3}-\d{4}$/.test(v);
             },
             message: props => `${props.value} is not a valid vehicle number!`
-        }
+        }*/
     }
 }, {
     timestamps: true
