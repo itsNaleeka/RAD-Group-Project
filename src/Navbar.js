@@ -13,7 +13,6 @@ function Navbar() {
                 <img src= {deliveryImage} className = "delivery" />
                 <div className="navbar-menu">
                     <a href="/">HOME</a>
-                    <a href="/Manage">MANAGE</a>
                     <a href="/About">ABOUT</a>
                     <a href="/Contact">CONTACT</a>
                 </div> 

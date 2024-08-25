@@ -38,7 +38,8 @@ const riderSchema = new Schema({
     },
     vehicleType: {
         type: String,
-        required: true
+        required: true,
+        enum: ['Car', 'Van', 'Bicycle', 'Scooter', 'Motorbike', 'Truck'] // Enum for vehicle types
     },
     vehicleNumber: {
         type: String,
@@ -52,9 +53,10 @@ const riderSchema = new Schema({
             message: props => `${props.value} is not a valid vehicle number!`
         }
     }
-})
+}, {
+    timestamps: true
+});
 
-
-const Rider = mongoose.model("riders",riderSchema );
+const Rider = mongoose.model("Rider", riderSchema);
 
 module.exports = Rider;

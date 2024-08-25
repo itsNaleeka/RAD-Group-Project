@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaUserShield, FaBox, FaUsers, FaBoxOpen } from 'react-icons/fa';
-import './Sidebar.css';
+import { useEffect, useState } from 'react';
 import { Route, Routes, NavLink } from 'react-router-dom';
+import RiderForm from './RiderForm';
+import './Sidebar.css';
+import axios from 'axios';
 
 function Deliver() {
   const deliveries = [
@@ -37,7 +40,8 @@ function Deliver() {
                 <button className="edit">Edit</button>
               </td>
             </tr>
-          ))}
+          ))
+       }
         </tbody>
       </table>
     </div>
@@ -46,10 +50,9 @@ function Deliver() {
 
 
 function Order() {
-  const orders = [
-    { id: 1, customerName: 'John Doe',address : '12/b,kirulapan',customerNumber:'077843567090', orderNumber: 'ORD123', orderDate: '2024-08-17', status: 'Delivered' },
-    { id: 2, customerName: 'Jane Smith',address : '12/b,kirulapan',customerNumber:'077843567090', orderNumber: 'ORD124', orderDate: '2024-08-18', status: 'Pending' },
-  ];
+const orders = [
+  {}
+];
 
   return (
     <div>
@@ -78,7 +81,6 @@ function Order() {
               <td>{order.orderDate}</td>
               <td>{order.status}</td>
               <td>
-                <button className="add">View</button>
                 <button className="delete">Delete</button>
                 <button className="edit">Edit</button>
               </td>
@@ -136,14 +138,155 @@ function Customer() {
 
 
 function Rider() {
-  const riders = [
-    { id: 1, name: 'Pabodya', nic: '12342234567', address:'31/a,kirulapna', phone: '0987654', vehicleType: 'Car', vehicleNumber: 'AB-1234' },
-    { id: 2, name: 'Pabodya3', nic: '1234523456', address:'31/a,kirulapna', phone: '09876548', vehicleType: 'Bike', vehicleNumber: 'CD-5678' },
-  ];
+  
+  const [addSelection, setAddSection] = useState(false);
+  const [editSection, setEditSection] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    address: "",
+    nic: "",
+    phone:"",
+    vehicleType:"",
+    vehicleNumber: "",
+  });
+
+const [ridersList,setDataList] = useState([]);
+
+  const [formDataEdit, setFormDataEdit] = useState({
+    name: "",
+    address: "",
+    nic: "",
+    phone:"",
+    vehicleType:"",
+    vehicleNumber: "",
+    _id: ""
+  });
+
+
+
+// Handle form input changes
+const handleOnChange = (e) => {
+  const { value, name } = e.target;
+  setFormData((preve) => {
+    return{
+      ...preve,
+      [name] : value
+    }
+  });
+};
+
+// Handle form submission
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const data = await axios.post("/create", formData)
+  console.log(data)
+  if(data.data.success){
+    setAddSection(false);
+    setEditSection(true);
+    alert(data.data.message)
+    getfetchData()
+  }
+}
+
+// Fetch data from the server
+const getfetchData = async () => {
+  try {
+    const response = await axios.get("/");
+    console.log("Fetched Data:", response.data); 
+    if (response.data.success) {
+      setDataList(response.data.data);
+    } else {
+      alert("Failed to fetch data");
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    alert("An error occurred while fetching data.");
+  }
+};
+
+useEffect(() => {
+  // Fetch data when the component is mounted
+  getfetchData();
+}, []);
+
+// Handle delete
+const handleDelete = async (id) => {
+  try {
+    const response = await axios.delete("/delete/" + id);
+    if (response.data.success) {
+      alert("Data deleted successfully");
+      getfetchData(); // Refresh the table data
+    } else {
+      alert("Failed to delete data");
+    }
+  } catch (error) {
+    console.error("Error deleting data:", error);
+    alert("An error occurred while deleting data.");
+  }
+};
+
+// Handle update
+const handleUpdate = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.put("/update", formDataEdit);
+    if (response.data.success) {
+      alert("Data updated successfully");
+      setEditSection(false);
+      getfetchData(); // Refresh the table data
+    } else {
+      alert("Failed to update data");
+    }
+  } catch (error) {
+    console.error("Error updating data:", error);
+    alert("An error occurred while updating data.");
+  }
+};
+
+// Handle form input changes for editing
+const handleEditOnChange = (e) => {
+  const { value, name } = e.target;
+  setFormDataEdit((prev) => ({
+    ...prev,
+    [name]: value
+  }));
+};
+
+// Set form data for editing
+const handleEdit = (el) => {
+  setFormDataEdit(el);
+  setEditSection(true);
+  setAddSection(false);
+};
+
 
   return (
     <div>
-      <h4>Rider Management</h4>
+       <h4>Rider Management</h4>
+       <button className="add" onClick={() => {setAddSection(true); setEditSection(false)}}>Add</button>
+       <div className="container">
+          
+        {
+          addSelection && (
+            <RiderForm
+              handleSubmit={handleSubmit}
+              handleOnChange={handleOnChange}
+              handleClose={() => setAddSection(false)}
+              reset={formData}
+          />
+          )
+        }
+
+        {editSection && (
+          <RiderForm
+            handleSubmit={handleUpdate}
+            handleOnChange={handleEditOnChange}
+            handleClose={() => setEditSection(false)}
+            reset={formDataEdit}
+          />
+        )}
+      
+     
       <table>
         <thead>
           <tr>
@@ -158,8 +301,9 @@ function Rider() {
           </tr>
         </thead>
         <tbody>
-          {riders.map((rider) => (
-            <tr key={rider.id}>
+          {ridersList.length > 0 ? (
+          ridersList.map((rider) => (
+            <tr key={rider._id}>
               <td>{rider.id}</td>
               <td>{rider.name}</td>
               <td>{rider.address}</td>
@@ -168,15 +312,20 @@ function Rider() {
               <td>{rider.vehicleType}</td>
               <td>{rider.vehicleNumber}</td>
               <td>
-                <button className="add">Add</button>
-                <button className="delete">Delete</button>
-                <button className="edit">Edit</button>
+              <button className="edit" onClick={() => handleEdit(rider)}>Edit</button>
+              <button className="delete" onClick={() => handleDelete(rider._id)}>Delete</button>
               </td>
             </tr>
-          ))}
+          ))
+        ) : (
+          <tr>
+              <td colSpan="8" style={{ textAlign: "center" }}>No data</td>
+          </tr>
+        )}
         </tbody>
       </table>
     </div>
+  </div>
   );
 }
 

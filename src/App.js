@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -6,8 +7,9 @@ import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import Manage from './components/Manage';
 
+
+axios.defaults.baseURL = "http://localhost:5000/"//backend url include
 
 function App() {
 
@@ -23,7 +25,6 @@ function App() {
           <div className='container2'>
           <Routes className="abc">
               <Route path="/" element={<Home />} />
-              <Route path="/Manage" element={<Manage/>} />
               <Route path="/About" element={<About/>} />
               <Route path="/Contact" element={<Contact/>} />
           </Routes>

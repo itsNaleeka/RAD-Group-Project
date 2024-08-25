@@ -2,9 +2,22 @@
   display: flex;
 }
 
+.container{
+  display: flex;
+}
+
 .tablecontent {
   padding-left: 10%;
   background-color: none;
+}
+
+.add {
+  background-color: #28a745;
+  color: white;
+}
+
+.add:hover {
+  background-color: #218838;
 }
 
 .sidebar {

@@ -1,90 +1,90 @@
-const router = require("express").Router();
-let Rider = require ("../models/rider.js");
+const express = require("express");
+const router = express.Router();
+const Rider = require("../models/rider.js"); // Ensure this model is correctly defined in models
 
-router.route("/add").post((req,res)=>{
-    const { name, nic, address, phone, vehicleType, vehicleNumber } = req.body;
-    
-    const newRider = new Rider ({
-        name,
-        nic,
-        address,
-        phone,
-        vehicleType,
-        vehicleNumber
-    })
+// Create and save a new rider
+router.post("/add", async (req, res) => {
+  const { name, nic, address, phone, vehicleType, vehicleNumber } = req.body;
 
-    newRider.save()
-        .then(()=>{
-            res.json("Rider added!");
-    })
-    .catch((err) => {
-        console.log(err);
-            res.status(500).json({ error: "An eror occurred while adding the rider."});
-    })
+  try {
+    const newRider = new Rider({
+      name,
+      nic,
+      address,
+      phone,
+      vehicleType,
+      vehicleNumber
+    });
+    await newRider.save(); // Save the new rider to the database
+    res.status(201).json({ success: true, message: "Rider added successfully!" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ success: false, error: "An error occurred while adding the rider." });
+  }
+});
 
-})
+// Fetch all riders
+router.get("/", async (req, res) => {
+  try {
+    const riders = await Rider.find();
+    res.status(200).json({ success: true, data: riders });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ success: false, error: "An error occurred while fetching riders." });
+  }
+});
 
-router.route("/").get((req,res)=>{
-    Rider.find()
-        .then((riders)=> {
-            res.json(riders)
-    })
-    .catch((err)=>{
-        console.log(err);
-    })
-})
+// Update rider details by ID
+router.put("/edit/:id", async (req, res) => {
+  const userId = req.params.id;
+  const { name, nic, address, phone, vehicleType, vehicleNumber } = req.body;
 
-//http://localhost:8070/update/id
-
-router.route("/edit/:id").put(async (req,res) => {
-    let userId = req.params.id;//get the id parameter and fetch it(how to fetch the id)
-    //destructure
-    const {name,nic,address,phone,vehicleType,vehicleNumber } = req.body;
-
-    const updateRider = {
-        name,
-        nic,
-        address,
-        phone,
-        vehicleType,
-        vehicleNumber
+  try {
+    const updatedRider = await Rider.findByIdAndUpdate(
+      userId,
+      { name, nic, address, phone, vehicleType, vehicleNumber },
+      { new: true }
+    );
+    if (!updatedRider) {
+      return res.status(404).json({ success: false, message: "Rider not found" });
     }
+    res.status(200).json({ success: true, message: "Rider updated successfully", data: updatedRider });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ success: false, message: "Error updating rider", error: err.message });
+  }
+});
 
-    const update = await Rider.findByIdAndUpdate(userId, updateRider, { new: true})
-    .then(() =>{
-        res.status(200).send({status: "User update", user:update})
-    })
-    .catch((err) =>{
-        console.log(err);
-        res.status(500).send({status:"Error with updating data"});
-    })
-})
+// Delete rider by ID
+router.delete("/delete/:id", async (req, res) => {
+  const userId = req.params.id;
 
-router.route("/delete/:id").delete(async(req,res) =>{
-    let userId = req.params.id;
+  try {
+    const deletedRider = await Rider.findByIdAndDelete(userId);
+    if (!deletedRider) {
+      return res.status(404).json({ success: false, message: "Rider not found" });
+    }
+    res.status(200).json({ success: true, message: "Rider deleted successfully" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ success: false, message: "Error deleting rider", error: err.message });
+  }
+});
 
-    await Rider.findByIdAndDelete(userId)
-        .then(() => {
-            res.status(200).send({status:"User deleted"});
-        })
-        .catch((err) => {
-            console.log(err.message);
-            res.status(500).send({status: "Error with delete user", error: err.message});
-        })
-})
+// Fetch a single rider by ID
+router.get("/get/:id", async (req, res) => {
+  const userId = req.params.id;
 
-
-router.route("/get/:id").get(async(req,res) =>{
-    let userId = req.params.id;
-    
-    await Rider.findById(userId)
-        .then(() =>{
-            res.status(200).send({status: "User fetched", user: user})
-        })
-        .catch((err)=>{
-            console.log(err.message);
-            res.status(500).send({status: "Error with get user", error: err.message});
-        })
-})
+  try {
+    const rider = await Rider.findById(userId);
+    if (!rider) {
+      return res.status(404).json({ success: false, message: "Rider not found" });
+    }
+    res.status(200).json({ success: true, data: rider });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ success: false, message: "Error fetching rider", error: err.message });
+  }
+});
 
 module.exports = router;
