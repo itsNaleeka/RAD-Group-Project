@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
-import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";	
+import Contact from "./pages/Contact/Contact";
+import PlaceOrder from "./pages/placeOrder/placeOrder";
 import { Route, Routes } from "react-router-dom";
-import Footer from "./components/footer/Footer";
 import "./App.css";
 import LoginPopup from "./components/loginPopup/LoginPopup";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
 	const [showLogin, setShowLogin] = useState(false);
@@ -21,6 +22,7 @@ const App = () => {
 					<Route path="/" element={<Home />} />
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/order" element={<PlaceOrder /> } />
+					<Route path="/contact" element={<Contact /> } />
 				</Routes>
 			</div>
 			<Footer />

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function placeOrder() {
+function PlaceOrder() {
   return (
     <h3>Place Order</h3>
   )
 }
 
-export default placeOrder
+export default PlaceOrder
