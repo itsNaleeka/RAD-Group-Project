@@ -2,14 +2,16 @@
 .content2 {
   display: flex;
   flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-  width: 100%;
 }
 
+a{
+  text-decoration: double;
+}
 
 /* Sidebar */
 .sidebar {
   height: 100vh;
-  background: #06011d;
+  background: #130905;
   color: #ecf0f1;
   display: flex;
   flex-direction: column;
@@ -49,11 +51,12 @@
   padding: 10px;
   transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
   border-radius: 5px;
+  width:100%;
 }
 
 .menu li:hover {
-  background-color: rgba(39, 45, 239, 0.8);
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: rgba(82, 82, 84, 0.8);
+  transform: scale(0.95); /* Slightly enlarge on hover */
 }
 
 .icon {
@@ -102,10 +105,10 @@ tr:hover {
 }
 
 button {
-  padding: 10px 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 10px;
   margin-right: 5px;
   font-size: 14px;
   transition: background-color 0.3s;
@@ -114,6 +117,7 @@ button {
 .add {
   background-color: #28a745;
   color: white;
+  
 }
 
 .add:hover {

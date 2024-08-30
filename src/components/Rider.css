@@ -6,7 +6,7 @@
   }
 
 h4{
-    color: white;
+    color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-display:inherit;
     font-size: 30px;
@@ -41,6 +41,11 @@ body {
   
   button:hover {
     background-color: #0056b3;
+  }
+
+  .ridersection{
+    display: inline-block;
+    width: 1200px;
   }
   
   /* Form styles */
@@ -115,37 +120,43 @@ body {
     }
   
     table, thead, tbody, th, td, tr {
-      display: block;
-      width: 100%;
+      display:-ms-inline-flexbox;
+      width: 63%;
     }
   
-    tr {
-      margin-bottom: 10px;
+    thead {
+      display : none;
     }
   
     th, td {
       text-align: right;
-      padding-left: 50%;
+      position: relative;
+    }
+
+    tr {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+    }
+  
+    td {
+      text-align: right;
       position: relative;
     }
   
-    th::before, td::before {
+    td::before {
       content: attr(data-label);
       position: absolute;
-      left: 0;
+      left: 10px;
       width: 50%;
-      padding-left: 10px;
-      font-weight: bold;
+      padding-right: 10px;
       text-align: left;
-    }
-  
-    th::before {
-      display: none;
+      font-weight: bold;
     }
   
     button {
-      width: 100%;
       margin-bottom: 10px;
     }
+  
+    
   }
   

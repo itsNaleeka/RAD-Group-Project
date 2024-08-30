@@ -1,16 +1,16 @@
 /* General Layout */
 .App{
-    background: rgb(24, 22, 45); /* Gradient background */
+    background:white; /* Gradient background */
+    
 }
   
   .container2 {
     display: flex;
-    padding-left: 0%;
+    padding-left: 0;
   }
   
   .allcontent {
     display: flex;
-
   }
 
   
@@ -18,17 +18,13 @@
   /* Adjust layout for smaller screens */
   @media (max-width: 768px) {
     .container {
-      padding: 10px; /* Reduced padding for mobile */
+       /* Reduced padding for mobile */
       flex-direction: column; /* Stack items vertically */
     }
   
     .allcontent {
       flex-direction: column; /* Stack items vertically */
       width: 100%;
-    }
-
-    .container2{
-        width: 100%;
     }
 
     .tablecontent{
@@ -54,3 +50,7 @@
     margin-bottom: 20px;
   }
   
+  .sidearrange{
+    display: flex;
+  }
+

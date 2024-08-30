@@ -3,6 +3,7 @@
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    display:inline-block;
     background-color: #f9f9f9;
     font-family: Arial, sans-serif;
   }
@@ -51,6 +52,11 @@
     font-weight: bold;
     margin-bottom: 20px;
     color: rgb(4, 4, 70);
+  }
+
+  .form{
+    width: 300px;
+    height: 400px;
   }
   
   /* Form Styles */
