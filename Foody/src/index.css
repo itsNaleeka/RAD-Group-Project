@@ -66,6 +66,16 @@ a {
     display: flex;
     flex-direction: column;
 }
+h3.title {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+}
+.title span {
+    margin-left: 0.25rem;
+    color: tomato;
+}
+
 
 /* Animations */
 @keyframes fadeIn {

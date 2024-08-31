@@ -16,7 +16,7 @@ function FoodItem({ id, name, price, desc, img }) {
 							className="add"
 							onClick={() => addToCart(id)}
 						>
-							buy
+							order
 						</button>
 					) : (
 						<>
@@ -31,7 +31,7 @@ function FoodItem({ id, name, price, desc, img }) {
 								className="add"
 								onClick={() => addToCart(id)}
 							>
-								buy
+								add
 							</button>
 						</>
 					)}
