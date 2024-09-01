@@ -4,46 +4,43 @@
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 60%;
   }
   
-  /* Contact Title */
   .contact-container .contact {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(4, 4, 70);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
   }
   
   /* Subheading */
   .contact-container h3 {
-    text-align: center;
-    font-size: 24px;
+    font-size: 1.25rem;
     color: #555;
+    font-weight: 500;
     margin-bottom: 40px;
   }
   
-  /* Detail Container */
-  .contact-container .detail {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 40px;
-  }
   
   /* Detail Section */
   .contact-container .detail-drop {
     flex: 1;
-    background-color: #fff;
-    padding: 20px;
+    padding: 1.5rem 1.75rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
-  
+  .contact-container .detail-drop ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    list-style: none;
+    padding-left: 1rem;
+  }
+
   /* Drop Query Section */
-  .drop {
+  .contact-container .drop {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -51,7 +48,7 @@
   }
   
   /* Form Styles */
-  .form input[type='text'] {
+  .contact-container .form input[type='email'] {
     width: 80%;
     padding: 12px;
     margin-bottom: 20px;
@@ -60,7 +57,7 @@
     font-size: 16px;
   }
   
-  .form button {
+  .contact-container .form button {
     padding: 12px 20px;
     background-color: rgb(4, 4, 70);
     color: white;
@@ -70,9 +67,15 @@
     font-size: 16px;
     transition: background-color 0.3s;
   }
-  
-  .form button:hover {
-    background-color: rgb(9, 25, 244);
+  .contact-container .socials{
+    margin-inline: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .contact-container .form button:hover {
+    background-color: tomato;
   }
   
   /* Contact Details */
