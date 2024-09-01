@@ -1,5 +1,5 @@
 .add{
-    width: 80%;
+    width: 75%;
     margin-left: max(5%);
     margin-top: 10px ;
     color: #6d6d6d;
@@ -11,11 +11,17 @@
 .add textarea,select{
     border-radius: 10px;
 }
+.add.form-contain{
+    justify-content: center;
+    padding-right: 0%;
+}
 .add form{
     gap: 20px;
     margin: 10%;
+    margin-right: 5%;
     width: 50%;
     padding: 30px;
+    padding-right: 20px;
     border:0px solid #a2a2a2;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;

@@ -42,7 +42,7 @@ const Add = () => {
 
   return (
     <div className="add">
-      <form className="flex-col" onSubmit={onSubmitHandler}>
+      <form className="flex-col form-contain" onSubmit={onSubmitHandler}>
         <h3>Make Reservation</h3>
         <div className="add-product-name flex-col">
           <p>Product Name</p>
