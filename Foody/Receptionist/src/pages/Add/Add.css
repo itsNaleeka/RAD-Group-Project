@@ -1,9 +1,21 @@
+.center-container {
+     width: 80%; 
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
 .add{
-    width: 75%;
-    margin-left: max(5%);
+    width: 90%;
+    margin-left: max(15%);
     margin-top: 10px ;
     color: #6d6d6d;
     font-size: 16px;
+    display: flex;
+    display: flex;
+    flex-direction: column; /* Ensure contents are stacked vertically */
+    align-items: center; 
 }
 .add h3{
     text-align: center;
@@ -59,7 +71,7 @@
 
 @media (max-width:700px){
     .add{
-        
+        width: 80%;
     }
     .add-product-name , .add-product-description{
         width: max(100%);

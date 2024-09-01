@@ -41,6 +41,7 @@ const Add = () => {
   };
 
   return (
+    <div className="center-container">
     <div className="add">
       <form className="flex-col form-contain" onSubmit={onSubmitHandler}>
         <h3>Make Reservation</h3>
@@ -75,6 +76,7 @@ const Add = () => {
       
         <button type="submit" className="add-btn">Add</button>
       </form>
+    </div>
     </div>
   );
 };

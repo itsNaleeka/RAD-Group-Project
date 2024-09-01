@@ -1,3 +1,20 @@
+.listflex-col{
+    margin: 40px;
+    width: 100%;
+    gap: 20px;
+}
+.listflex-col p{
+    align-items: center;
+}
+.list-table{
+    width: 100%;
+    margin: 10px;
+}
+.topic{
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 20px 50%;
+}
 .list-table-format {
     display: grid;
     grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;    /* 6 columns and their width */
@@ -10,6 +27,8 @@
 
 .list-table-format-title {
     background-color: #f9f9f9;
+    display: absolute;
+    align-items: center;
 }
 
 @media(max-width: 600px) {
@@ -50,3 +69,4 @@
     cursor: pointer;
     color:red;
 }
+

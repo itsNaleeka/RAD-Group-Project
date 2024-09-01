@@ -73,9 +73,6 @@
 }
 
 @media (max-width:700px){
-    .newadd{
-        
-    }
     .newadd-product-name , .newadd-product-description{
         width: max(100%);
     
