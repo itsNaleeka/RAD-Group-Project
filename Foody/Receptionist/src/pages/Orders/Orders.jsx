@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 
-import FormTable from '../../components/Form/Form';
+import FormTable from '../../components/Form/Form.jsx';
 
 const List = () => {
   const url = "http://localhost:4000";

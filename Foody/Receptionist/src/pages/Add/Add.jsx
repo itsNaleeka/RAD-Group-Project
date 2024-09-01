@@ -43,6 +43,7 @@ const Add = () => {
   return (
     <div className="add">
       <form className="flex-col" onSubmit={onSubmitHandler}>
+        <h3>Make Reservation</h3>
         <div className="add-product-name flex-col">
           <p>Product Name</p>
           <input onChange={onChangeHandler} value={data.name} type="text" name="name" placeholder='Type here' required/>
