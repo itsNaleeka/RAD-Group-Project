@@ -14,20 +14,14 @@ const List = () => {
   const [formDataEdit, setFormDataEdit] = useState({
     id : "",
     name: "",
-    email: "",
-    phone: "",
-    date: "",
-    time: "",
-    table: "",
-    category: "", 
-    price: "",
     description: "",
-    members: "",
+    price: "",              
+    category: "",
   });
 
 
   const fetchList = async () => {
-    const response = await axios.get(`${url}/api/reservation/list`);
+    const response = await axios.get(`${url}/api/food/list`);
     if (response.data.success) {
       setList(response.data.data);  // if success, data will store in List
     } else {
@@ -35,8 +29,8 @@ const List = () => {
     }
   }
 
-  const removeReservation = async (reservationId) => {
-     const response = await axios.post(`${url}/api/reservation/remove`,{id:reservationId});
+  const removeFood = async (foodId) => {
+     const response = await axios.post(`${url}/api/food/remove`,{id:foodId});
      await fetchList();
      if(response.data.success){
       toast.success(response.data.message)
@@ -49,7 +43,7 @@ const List = () => {
   const handleUpdate = async(event) => {
    event.preventDefault()
    console.log(formDataEdit)
-   const response = await axios.put(`${url}/api/reservation/update`,{
+   const response = await axios.put(`${url}/api/food/update`,{
     id: formDataEdit.id, ...formDataEdit});
    await fetchList();
    if (response.data.success) {
@@ -66,19 +60,12 @@ const List = () => {
 }
 
 const handleEdit = (item)=>{
-
      setFormDataEdit({
       id: item._id,
       name: item.name,
-      email: item.email,
-      phone: item.phone,
-      date: item.date,
-      time: item.time,
-      table: item.table,
-      category: item.category,
-      price: item.price,
       description: item.description,
-      members: item.members,
+      price: item.price,
+      category: item.category,
      });
      setEditSection(true)
 }
@@ -104,39 +91,27 @@ const handleEdit = (item)=>{
             <div className="list-table">
         <div className="list-table-format title">
           <b>Name</b>
-          <b>Email</b>
-          <b>Phone Number</b>
-          <b>Date</b>
-          <b>Time</b>
-          <b>Table</b>
-          <b>Category</b>
-          <b>Price</b>
           <b>Description</b>
-          <b>Members</b>
-          <b>Edit Reservation</b>
-          <b>Remove Reservation</b>
+          <b>Price</b>
+          <b>Category</b>
+          <b>Action</b>
+          <b>Action</b>
         </div>
-          {Array.isArray(list) && list.length > 0 ? (
+        {list[0] ? ( {
           list.map((item, index) => {
           return (
             <div key={index} className="list-table-format">
               <p>{item.name}</p>
-              <p>{item.email}</p>
-              <p>{item.phone}</p>
-              <p>{item.date}</p>
-              <p>{item.time}</p>
-              <p>{item.table}</p>
-              <p>{item.category}</p>
-              <p>RS.{item.price}</p>
               <p>{item.description}</p>
-              <p>{item.members}</p>
+              <p>${item.price}</p>
+              <p>{item.category}</p>
               <button className='btnchange' onClick={()=>handleEdit(item)}>Edit</button>
-              <p onClick={()=>removeReservation(item._id)} className='cursor'>X</p>
+              <p onClick={()=>removeFood(item._id)} className='cursor'>X</p>
             </div>
                  );
-           })
-          ): <p className="list-table-format">No data</p>
-        }
+           }
+        )}):(
+            <p className="list-table-format">No data</p>)}
       </div>
     </div>
     </div>
@@ -144,7 +119,3 @@ const handleEdit = (item)=>{
 };
 
 export default List;
-
-
-//        {list[0] ? ( )
-//    (  <p className="list-table-format">No data</p>)

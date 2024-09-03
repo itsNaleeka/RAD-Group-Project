@@ -1,40 +1,57 @@
-.listflex-col{
+.listflex-col {
     margin: 40px;
-    width: 100%;
+    width: 100%; /* Changed from 200% to 100% to fit within the viewport */
     gap: 20px;
-}
-.listflex-col p{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
-.list-table{
-    width: 100%;
-    margin: 10px;
+
+.listflex-col p {
+    align-items: center;
 }
-.topic{
+
+.list-table {
+    width: 100%; /* Changed from 120% to 100% to fit within the viewport */
+    margin: 10px;
+    border: 1.2px solid tomato;
+    border-radius: 8px;
+    background-color: #e6e6e6;
+}
+
+.topic {
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 0px 20px 50%;
+    padding: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: bold;
 }
+
 .list-table-format {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;    /* 6 columns and their width */
+    grid-template-columns: repeat(12, 1fr); /* Simplified grid definition */
     align-items: center;
     gap: 10px;
     padding: 12px 15px;
-    border: 1px solid #cacaca;
+    border: 1px solid tomato;
     font-size: 13px;
 }
 
-.list-table-format-title {
-    background-color: #f9f9f9;
-    display: absolute;
+.title {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1.2px solid black;
+    background-color: #f4f4f4;
+    font-weight: bold;
 }
 
-@media(max-width: 600px) {
+@media (max-width: 1200px) {
     .list-table-format {
-        grid-template-columns: 1fr 3fr 1fr;
-        gap: 15px;
+        grid-template-columns: repeat(6, 1fr); /* Adjusted for smaller screens */
+        gap: 5px;
     }
 
     .list-table-format.title {
@@ -51,6 +68,8 @@
     border-radius: 6px;
     width: max(30%, 40px);
     transition-duration: 0.3s;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -67,6 +86,5 @@
 
 .cursor {
     cursor: pointer;
-    color:red;
+    color: red;
 }
-
