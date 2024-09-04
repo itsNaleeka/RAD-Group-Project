@@ -1,7 +1,7 @@
 // Adding routes to the fucnitons
 
 import express from "express";
-import { addFood } from "../controllers/foodController.js";
+import { addFood, listFood } from "../controllers/foodController.js";
 import multer from "multer";
 
 //creating the router
@@ -15,11 +15,11 @@ const storage = multer.diskStorage({
     }
 })
 
-const uplaod = multer({storage:storage})
+const upload = multer({storage:storage})
 
 //send data to the server
-foodRouter.post("/add",uplaod.single("image"),addFood)
-
+foodRouter.post("/add",upload.single("image"),addFood)
+foodRouter.get("/list",listFood)
 
 
 
