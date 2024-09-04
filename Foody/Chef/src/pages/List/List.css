@@ -1,0 +1,62 @@
+.list-table-foramt{
+    display: grid;
+    grid-template-columns:0.5fr 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-bottom: 1px solid #cacaca;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    font-size: 13px;
+    box-shadow: 4px 4px 15px #aaaaaa;
+    margin: 10px 0px;
+}
+.list-table-foramt p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.action{
+    cursor: pointer;
+}
+.list-table-foramt img{
+    width: 70px;
+    border-radius: 10px;
+}
+.list-table-title{
+    display: grid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color:  rgba(221, 92, 70,0.1);
+    grid-template-columns:0.5fr 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-bottom:5px solid tomato;
+    margin-bottom: 10px;
+}
+.list-table{
+    height: 100vh;
+}
+@media (max-width:600px) {
+
+    .list-table-foramt {
+        grid-template-columns:1fr 3fr 1fr;
+        gap:15px;
+    }
+    .list-table-title{
+        display: none;
+    }
+}
+
+.list-table-foramt {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
