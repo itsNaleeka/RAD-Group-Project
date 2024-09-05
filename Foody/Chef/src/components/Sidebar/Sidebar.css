@@ -3,6 +3,7 @@
     height: 100%;
     background-color: tomato;
     transition: 0.3s ease;
+    padding-bottom: 100vh;
     
 }
 .sidebar:hover{
