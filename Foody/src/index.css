@@ -10,11 +10,15 @@
     --hover-primary-bg: rgb(255, 228, 223);
 }
 html{
+    font-size: 13px;
     scroll-behavior: smooth;
 }
 body {
     min-height: 100vh;
     font-family: "Outfit", sans-serif;
+}
+p{
+    font-size: 1.1rem !important;
 }
 button{
     border: none;

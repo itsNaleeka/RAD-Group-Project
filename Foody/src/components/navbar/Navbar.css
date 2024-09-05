@@ -13,7 +13,6 @@
     padding: 0.25rem 1rem;
     font-weight: 500;
     border-radius: 0.5rem;
-    user-select: none;
     transition: background 0.3s ease-in-out, scale 0.25s ease-in-out;
     position: relative;
 }
@@ -60,6 +59,12 @@
     border-radius: 50%;
     background: tomato;
 }
+.primaryBtn-2{
+    background: transparent;
+    font-weight: 500;
+    border: 0.15rem solid rgba(0, 0, 0, 0.323);
+}
+
 @media (max-width: 900px) {
     .navbar .logo {
         width: 5rem;
