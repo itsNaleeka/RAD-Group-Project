@@ -1,0 +1,113 @@
+/* Container Styles */
+
+.contact-container{
+  position: relative;
+}
+.contact-container .content {
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    text-align: center;
+    width: 60%;
+  }
+  
+  .contact-container .contact {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Subheading */
+  .contact-container h3 {
+    font-size: 1.25rem;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  
+  
+  /* Detail Section */
+  .contact-container .detail-drop {
+    flex: 1;
+    padding: 1.5rem 1.75rem;
+    border-radius: 8px;
+  }
+  .contact-container .detail-drop ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    list-style: none;
+    padding-left: 1rem;
+  }
+
+  /* Drop Query Section */
+  .contact-container .drop {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(4, 4, 70);
+  }
+  
+  /* Form Styles */
+  .contact-container .form{
+    margin-top: 2rem;
+  }
+  .contact-container .form input[type='email'] {
+    width: 80%;
+    padding: 1rem 2rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 16px;
+  }
+  
+  .contact-container .form button {
+    padding: 12px 20px;
+    background-color: rgb(4, 4, 70);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  .contact-container .socials{
+    margin-inline: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .contact-container .form button:hover {
+    background-color: tomato;
+  }
+  .contact-container .bg-img{
+    position: absolute;
+    bottom: -5rem;
+    left: -10rem;
+  }
+  
+  /* Contact Details */
+  .contact-container h2 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .contact-container p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container .detail {
+      flex-direction: column;
+    }
+  }
+  

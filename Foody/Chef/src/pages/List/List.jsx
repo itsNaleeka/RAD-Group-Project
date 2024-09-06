@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import './List.css'
 import axios from "axios"
-import {toast} from "react-toastify"
-const  List = () => {
+import { toast } from 'react-toastify';
+
+const List = () => {
 
   const url = "http://localhost:4000";
-
   const [list,setList] = useState([]);
 
-  const fetchList = async()=>{
-    const response = await axios.get(`${url}/api/food/list`) //api call
-
+  const fetchList = async() => {
+    const response = await axios.get(`${url}/api/food/list`)  //geting data 
+  
     if(response.data.success){
       setList(response.data.data)
     }
@@ -18,33 +18,32 @@ const  List = () => {
       toast.error("Error")
     }
   }
-//removing food fucniton whne th action button is clicked
-  const removeFood = async(foodID) => {
-    //api call
-    const resposne = await axios.post(`${url}/api/food/remove`,{id:foodID});
+
+  const removeFood = async(foodId) =>{
+    const response = await axios.post(`${url}/api/food/remove`,{id:foodId}); //calling API
     await fetchList();
-    if(resposne.data.success){
-      toast.success(resposne.data.message);
+    if(response.data.success){
+      toast.success(response.data.message)
     }
     else{
-      toast.error("Error");
+      toast.error("Error")
     }
   }
 
-  useEffect(()=>{
-    fetchList();
-  },[])
+    useEffect(()=>{
+      fetchList();
+    },[])
 
- useEffect(() => {
-    const rows = document.querySelectorAll("list-table-format");
-    rows.forEach((item, index) => {
-      item.style.animationDelay = `${index * 0.3}s`;
-    });
-  }, []);
-
+    useEffect(() => {
+      const rows = document.querySelectorAll("list-table-title");
+      rows.forEach((row, index) => {
+        row.style.animationDelay = `${index * 0.5}s`;
+      });
+    }, []);
+ 
   return (
-    <div className = 'list add flex-col'>
-      <p>All food List</p>
+    <div className='list add flex-col'>
+      <p className='topic'>All Food Items</p>
       <div className="list-table">
         <div className="list-table-title">
           <b>Image</b>
@@ -55,16 +54,17 @@ const  List = () => {
         </div>
         {list.map((item,index)=>{
           return(
-            <div  key={index} className="list-table-foramt" >
-              <img src={`${url}/images/`+item.image} alt=""/>
+            <div key={index} className='list-table-format'>
+              <img src={`${url}/images/`+item.image} alt />
               <p>{item.name}</p>
               <p>{item.category}</p>
-              <p>${item.price}</p>
-              <p onClick={()=>removeFood(item._id)}className='action'>X</p>
+              <p>{item.price}</p>
+              <p onClick={()=>removeFood(item._id)} className='cursor'>X</p>
             </div>
           )
         })}
       </div>
+      
     </div>
   )
 }

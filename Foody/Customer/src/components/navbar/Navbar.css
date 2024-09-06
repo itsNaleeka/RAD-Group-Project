@@ -1,0 +1,91 @@
+.navbar {
+    padding: 2rem 0;
+    justify-content: space-between;
+}
+.navbar-menu{list-style: none;
+    gap: 1rem;
+}
+.navbar-btns {
+    gap: 1.5rem;
+}
+.navbar-menu > * {
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease-in-out, scale 0.25s ease-in-out;
+    position: relative;
+}
+.navbar-menu > *:hover {
+    background: var(--hover-primary-bg);
+}
+.navbar-menu > *:active{
+    scale: 0.9;
+}
+.navbar-btns button {
+    font-weight: 600;
+    user-select: none;
+    transition: background 0.15s ease-in-out, scale 0.25s ease-in-out;
+    font-size: 1rem;
+}
+.navbar-menu > *.active {
+    background: var(--hover-primary-bg);
+}
+.navbar-menu > *::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 0%;
+    height: 0.25rem;
+    background: tomato;
+    border-radius: 0.5rem 0.5rem 0 0;
+    transition: width 0.25s ease-in-out;
+}
+.navbar-menu > *.active::after{
+    width: 100%;
+}
+.navbar-cart-icon {
+    position: relative;
+}
+.navbar-cart-icon .dot {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: tomato;
+}
+.primaryBtn-2{
+    background: transparent;
+    font-weight: 500;
+    border: 0.15rem solid rgba(0, 0, 0, 0.323);
+}
+
+@media (max-width: 900px) {
+    .navbar .logo {
+        width: 5rem;
+    }
+    .navbar-menu {
+        gap: 0.25rem;
+        font-size: 1rem;
+    }
+    .navbar-btns{
+        gap: 0.75rem;
+    }
+    .navbar-btns img {
+        width: 1.25rem;
+    }
+    .navbar-btns button {
+        padding: 0.25rem 0.75rem;
+        width: max-content;
+    }
+}
+@media (max-width: 760px) {
+    .navbar-menu {
+        display: none !important;
+    }
+}
