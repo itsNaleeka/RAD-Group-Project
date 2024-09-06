@@ -4,7 +4,7 @@ import { StoreContext } from "../context/StoreContext";
 import FoodItem from "../foodItem/foodItem";
 
 function FoodDisplay({ category }) {
-	const { food_list } = useContext(StoreContext);
+	const { food_list, url } = useContext(StoreContext);
 
 	return (
 		<div className="food-display col" id="food-display">
@@ -18,7 +18,7 @@ function FoodDisplay({ category }) {
 							desc={item.description}
 							id={item._id}
 							price={item.price}
-							img={item.image}
+							img={url+"/images/"+item.image}
 						/>;
 					}
 				})}
