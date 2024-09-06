@@ -3,6 +3,9 @@
     padding-top: 3rem;
     margin-top: 1rem;
 }
+.aboutus .container{
+    margin-top: 5rem;
+}
 .img-container{
     margin-top: 2rem;
     position: relative;
@@ -15,14 +18,17 @@
     border-radius: 0.75rem;
     background: linear-gradient(to left, tomato ,rgb(255, 145, 82));
 }
+.aboutus .container .content {
+    max-width: 50%;
+    margin: auto;
+    text-align: center;
+}
 .img-container img {
     position: absolute;
     bottom: 0rem;
+    width: 26rem;
     left: 60%;
 }
 .content .title{
     font-weight: 600;
 } 
-.content .team {
-    margin-top: 2rem;
-}

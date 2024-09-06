@@ -6,6 +6,9 @@
     gap: 1.5rem;
     text-align: center;
 }
+.explore-menu h1{
+    margin-top: 1rem;
+}
 .explore-menu-list{
     margin-block: 1rem 2rem;
     display: flex;

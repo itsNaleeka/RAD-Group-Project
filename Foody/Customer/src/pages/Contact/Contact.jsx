@@ -39,6 +39,7 @@ const Contact = () => {
 					</p>
 				</div>
 			</div>
+			<img src="/contact.png" alt="" className="bg-img" />
 		</div>
 	);
 };

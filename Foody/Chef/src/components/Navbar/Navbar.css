@@ -1,0 +1,18 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4%;
+}
+.logo-content h3{
+    color: #555555;
+}
+.navbar .logo{
+    width: 140px;
+}
+
+@media (max-width:663px){
+    .navbar{
+        width: 100%;
+    }
+}

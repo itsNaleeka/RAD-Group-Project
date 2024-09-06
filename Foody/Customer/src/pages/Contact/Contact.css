@@ -1,9 +1,12 @@
 /* Container Styles */
 
+.contact-container{
+  position: relative;
+}
 .contact-container .content {
-    padding: 40px;
+    padding: 3rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 4rem auto 0;
     text-align: center;
     width: 60%;
   }
@@ -48,12 +51,17 @@
   }
   
   /* Form Styles */
+  .contact-container .form{
+    margin-top: 2rem;
+  }
   .contact-container .form input[type='email'] {
     width: 80%;
-    padding: 12px;
+    padding: 1rem 2rem;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     font-size: 16px;
   }
   
@@ -76,6 +84,11 @@
   }
   .contact-container .form button:hover {
     background-color: tomato;
+  }
+  .contact-container .bg-img{
+    position: absolute;
+    bottom: -5rem;
+    left: -10rem;
   }
   
   /* Contact Details */
