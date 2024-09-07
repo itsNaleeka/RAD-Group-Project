@@ -1,6 +1,5 @@
 .center-container {
-     width: 80%; 
-     display: flex;
+     width: max(70%); 
     justify-content: center;
     align-items: center;
     margin: 0px;
@@ -8,12 +7,12 @@
 }
 .add{
     width: 90%;
-    margin-left: max(15%);
+    margin-left: max(8%);
+    margin-right: max(15%);
     margin-top: 10px ;
     color: #6d6d6d;
     font-size: 16px;
-    display: flex;
-    display: flex;
+     
     flex-direction: column; /* Ensure contents are stacked vertically */
     align-items: center; 
 }
@@ -28,10 +27,12 @@
     padding-right: 0%;
 }
 .add form{
-    gap: 20px;
-    margin: 10%;
-    margin-right: 5%;
-    width: 50%;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-direction: column;
+    margin:  75px 150px 75px;
+    width: 70%;
     padding: 30px;
     padding-right: 20px;
     border:0px solid #a2a2a2;
@@ -39,7 +40,7 @@
     border-radius: 10px;
 }
 .add-product-name, .add-product-description{
-    width: max(60%);
+    width: max(70%);
 }
 .add-product-name input, .add-product-description textarea{
     padding: 10px;
@@ -49,30 +50,43 @@
 }
 .add-category-price{
     display: flex;
+    width: max(70%);
     gap: 30px;
 }
 .add-category-price select, .add-category-price input{
-    max-width: 120px;
     padding: 10px;
     border-radius: 10px;
     border:1px solid tomato;
 }
 .add-btn{
-    max-width: 120px;
+    width: max(30%);
     border: none;
     padding: 10px;
     background-color: tomato;
     color: white;
     cursor: pointer;
     border-radius: 10px;
-    margin-left: 20%;
 
+
+}
+
+@media (max-width:1250px){
+    .add-category-price{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: max(100%);
+        margin-left: max(30%);
+    }
+  
 }
 
 @media (max-width:700px){
     .add{
-        width: 80%;
+        width: 100%;
+
     }
+
     .add-product-name , .add-product-description{
         width: max(100%);
     
@@ -82,15 +96,14 @@
         flex-direction: column;
         gap: 10px;
         width: max(100%);
+        margin-left: 0px;
     }
     .add-category-price select, .add-category-price input{
         max-width: 100%;
     }
-    .add-price {
-        width: max(100%);
-    }
+
     .add-button{
-        max-width: 200%;
+        width: max(100%);
     }
     .add-btn{
         margin-left: 0;

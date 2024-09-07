@@ -88,8 +88,8 @@ const handleEdit = (item)=>{
   }, []);
 
   return (
-    <div className='listflex-col'>
-      <h4 className='topic'>All Food List</h4>
+    <div className='list add flex-col'>
+      <h4 className='topic'>All Table Reservations</h4>
       <div>
             {
         editSection && (

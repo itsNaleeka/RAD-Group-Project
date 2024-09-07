@@ -9,7 +9,7 @@ const reservationSchema = new mongoose.Schema({
     table: { type:Number, required: true },
     category: { type:String, required: true },
     price: { type:Number, required: true },
-    description: { type:String, required: true} ,
+    description: { type:String, required: false} ,
     members: { type:Number, required: true}
 });
 

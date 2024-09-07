@@ -6,8 +6,7 @@ import fs from 'fs'          // fs is file system in node.js
 // add food item
 
 const addFood = async (req,res) => {  //asyncronous arrow function
-
- // let image_filename = `${req.file.filename}`; // Store that unique file name that variable /******* remove******** */
+; // Store that unique file name that variable /******* remove******** */
   
   const food = new foodModel({        // create food variable that is foodModel type and assign the values of each element of each part
     name: req.body.name,

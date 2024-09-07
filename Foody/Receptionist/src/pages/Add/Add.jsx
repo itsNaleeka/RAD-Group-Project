@@ -12,7 +12,7 @@ const Add = () => {
     date: "",
     time: "",
     table: "",
-    category: "", 
+    category: "Cake", 
     price: "",
     description: "",
     members: "",
@@ -38,7 +38,7 @@ const Add = () => {
     formData.append("description",data.description)
     formData.append("members",Number(data.members))
 
-    const response = await axios.post(`${url}/api/reservation/Add`, formData); // Send the data object directly
+    const response = await axios.post(`${url}/api/reservation/add`, formData); // Send the data object directly
       if (response.data.success) {
         setData({                         // set form empty after submit
           name: "",
@@ -102,7 +102,7 @@ const Add = () => {
             required
             />
           </div>
-
+  
           <div className="add-product-name flex-col">
             <p>Date</p>
             <input
@@ -116,7 +116,7 @@ const Add = () => {
           </div>
 
           <div className="add-category-price">
-            <div className="add-category flex-col">
+            <div className="add-product-name flex-col">
               <p>Time</p>
               <select
                 onChange={onChangeHandler}
@@ -157,8 +157,8 @@ const Add = () => {
           </div>
 
           <div className="add-category-price">
-            <div className="add-category flex-col">
-              <p>Food Category</p>
+            <div className="add-product-name flex-col">
+              <p>Category</p>
               <select
                 onChange={onChangeHandler}
                 value={data.category}
@@ -173,7 +173,7 @@ const Add = () => {
               </select>
             </div>
 
-            <div className="add-price flex-col">
+            <div className="add-product-name flex-col">
               <p>Full Price</p>
               <input
                 onChange={onChangeHandler}
@@ -194,7 +194,6 @@ const Add = () => {
               name="description"
               rows="6"
               placeholder="Write content here"
-              required
             ></textarea>
           </div>
 

@@ -57,5 +57,30 @@ const removeReservation =  async (req,res) => {
     }
 }
 
+const searchTable = async (req, res) => {
+    const { date, time } = req.body; // Extract the date and time from the request body
+ 
+    // query oject to pass data to  find method as key value pairs
+    let tablebooking = {}; // Base tablebooking to find all booked tables
 
-export { addReservation, listReservation, updateReservation, removeReservation}
+    // If date is provided, add it to the tablebooking
+    if (date) {
+        tablebooking.date = date;
+    }
+    // If time is provided, add it to the tablebooking
+    if (time) {
+        tablebooking.time = time;
+    }
+
+    try {
+        // Perform the search based on the constructed tablebooking
+        const bookedTables = await reservationModel.find(tablebooking);
+        res.json({ success: true, data: bookedTables });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error retrieving reservations" });
+    }
+};
+
+
+export { addReservation, listReservation, updateReservation, removeReservation, searchTable}
