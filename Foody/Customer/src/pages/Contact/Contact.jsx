@@ -10,7 +10,7 @@ const Contact = () => {
 				<div className="detail-drop">
 					<div className="drop capitalize">submit to newsletter!</div>
 					<div className="form">
-						<input type="email" placeholder="Enter your email address" />
+						<input type="email" placeholder="Enter your email Address" />
 						<button type="submit">Submit</button>
 
 						<div className="socials row">

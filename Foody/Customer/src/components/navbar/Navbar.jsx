@@ -30,15 +30,21 @@ const Navbar = ({ setShowLogin }) => {
 					Home
 				</Link>
 				<a
+					
 					href="#explore-menu"
-					onClick={() => setMenu("menu")}
+					onClick={() => 
+						{setMenu("menu")
+						navigate("/")}}
 					className={menu == "menu" ? "active" : ""}
 				>
 					Menu
 				</a>
 				<a
 					href="#aboutus"
-					onClick={() => setMenu("about")}
+					onClick={() => {
+						setMenu("about");
+						navigate("/");
+					}}
 					className={menu == "about" ? "active" : ""}
 				>
 					About us

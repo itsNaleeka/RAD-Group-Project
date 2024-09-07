@@ -4,38 +4,41 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../context/StoreContext";
 
 function FoodItem({ id, name, price, desc, img }) {
-	const {cartItems, addToCart, removeFromCart, url} = useContext(StoreContext)
+	const { cartItems, addToCart, removeFromCart, token } =
+		useContext(StoreContext);
 
 	return (
 		<div className="food-item">
 			<div className="food-item-img-container">
 				<img src={img} alt="" className="food-item-img" />
-				<div className="options-btns row">
-					{!cartItems[id] ? (
-						<button
-							className="add"
-							onClick={() => addToCart(id)}
-						>
-							order
-						</button>
-					) : (
-						<>
-							<button
-								className="remove"
-								onClick={() => removeFromCart(id)}
-							>
-								remove
-							</button>
-							<span>{cartItems[id]}</span>
+				{token ? (
+					<div className="options-btns row">
+						{!cartItems[id] ? (
 							<button
 								className="add"
 								onClick={() => addToCart(id)}
 							>
-								add
+								order
 							</button>
-						</>
-					)}
-				</div>
+						) : (
+							<>
+								<button
+									className="remove"
+									onClick={() => removeFromCart(id)}
+								>
+									remove
+								</button>
+								<span>{cartItems[id]}</span>
+								<button
+									className="add"
+									onClick={() => addToCart(id)}
+								>
+									add
+								</button>
+							</>
+						)}
+					</div>
+				) : null}
 			</div>
 			<div className="food-item-details col">
 				<div className="name row">

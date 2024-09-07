@@ -19,10 +19,6 @@ function LoginPopup({ setShowLogin }) {
 		setData(data=>({...data, [name]:value}))
 	}
 
-	useEffect(()=> {
-		console.log(data);
-	}, [data])
-
 	const onLogin = async (event) => {
 		event.preventDefault();
 		let newUrl = url
@@ -63,11 +59,17 @@ function LoginPopup({ setShowLogin }) {
 						<>
 							<input
 								type="email"
+								name='email'
+								value={data.email}
+								onChange={onChangeHandler}
 								placeholder="Enter your email"
 								required
 							/>
 							<input
 								type="password"
+								name='password'
+								value={data.password}
+								onChange={onChangeHandler}
 								placeholder="Enter password"
 								required
 							/>
