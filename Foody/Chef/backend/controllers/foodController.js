@@ -53,4 +53,23 @@ const removeFood = async(req,res) =>{
         res.json({success:false,message:"Food doesn't exists"})
     }
 }
-export {addFood, listFood, removeFood};
+
+
+//update food item
+
+const updateFood = async(req,res) =>{
+    try{
+        console.log(req.body)
+        const  { id, ...rest } = req.body;
+        //updateOne - fisrt para=> which data to be updated(ID)/ sec para=> data to be updated
+        const data = await foodModel.updateOne({_id:id},{$set:rest}) //$set updates only the field specificed in rest
+        res.json({success:true,message:"Updated Successfully"})
+    }
+    catch{
+        res.json({success:false,message:"Update Unsuccessfull"})
+    }
+}
+
+
+
+export {addFood, listFood, removeFood, updateFood};

@@ -35,7 +35,7 @@
 .actions{
     display: flex;
     gap: 8px;
-    justify-content: space-between;
+    justify-content: center;
     
 }
 .list-table{
@@ -56,8 +56,24 @@
     padding: 8px 16px;
     border-radius: 25px;
     background-color: rgba(255, 99, 71, 0.508);
-    margin-right: 50px;
+    margin-right: 0px;
     transition: 0.3s ease;
+}
+.update-cursor{
+    cursor: pointer;
+    color: rgb(18, 203, 5);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background-color: rgba(111, 255, 71, 0.508);
+    margin-right: 0px;
+    transition: 0.3s ease;
+}
+.update-cursor:hover{
+    color: rgb(9, 169, 20);
+    background-color: #fff;
+    border: 1px solid #acacac;
 }
 .cursor:hover{   
     color: tomato;
@@ -77,8 +93,8 @@
     justify-content: center;
     
     position: fixed;
-    top:56px;
-    left: 0px;
+    top:10px;
+    left: 15%;
     z-index: 1000;
 }
 .popup-overlay {

@@ -5,20 +5,19 @@ import { toast } from 'react-toastify';
 import Popup from '../../components/Popup/Popup';
 
 const List = () => {
-
   const url = "http://localhost:4000";
   const [list,setList] = useState([]);
+  const [selectedFood,setSelectedFood] = useState(null)
 
   const fetchList = async() => {
     const response = await axios.get(`${url}/api/food/list`)  //geting data 
-  
     if(response.data.success){
       setList(response.data.data)
     }
     else{
       toast.error("Error")
     }
-  }
+  };
 
   //removing food item form the list
   const removeFood = async(foodId) =>{
@@ -30,7 +29,9 @@ const List = () => {
     else{
       toast.error("Error")
     }
-  }
+  };
+
+  const [updateSection,setUpdateSection] = useState(false);
 
     useEffect(()=>{
       fetchList();
@@ -42,15 +43,9 @@ const List = () => {
       rows.forEach((row, index) => {
         row.style.animationDelay = `${index * 0.5}s`;
       });
-    }, []);
+    }, []);    
 
-
-    //popup box
-
-    const [updateSection,setUpdateSection] = useState(false);
-
-    
- 
+  
   return (
     <>
     
@@ -61,7 +56,7 @@ const List = () => {
             <div className="popup-overlay" onClick={()=>setUpdateSection(false)}></div>
             <div className="popup-class">
             
-            <Popup setUpdateSection= {setUpdateSection}/>
+            <Popup setUpdateSection= {setUpdateSection} selectedFood={selectedFood} fetchList={fetchList}/>
           </div>
           </>
         )
@@ -84,7 +79,7 @@ const List = () => {
               <p>{item.category}</p>
               <p>{item.price}</p>
               <div className="actions">
-              <p onClick={()=>setUpdateSection(true)}>Update</p>
+              <p onClick={() => {setUpdateSection(true); setSelectedFood(item);}} className='update-cursor'>Update</p>
               <p onClick={()=>removeFood(item._id)} className='cursor'>Remove</p>
               </div>
              

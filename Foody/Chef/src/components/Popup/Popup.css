@@ -1,10 +1,10 @@
 .popup-container{
     display: flex;
-    width: 40%;
+    width: 70%;
     padding:30px 40px;
     
 }
-.popup-from{
+.popup-form{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -14,21 +14,21 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);;
     background-color: #fff;
 }
-.popup-from label{
+.popup-form label{
     font-size: 1.2rem;
-    padding: 0px px;
+    padding: 0px 0px;
     align-items: left;
-    margin: 10px 0px;
+    margin: 5px 0px;
     font-weight: 600;
     
 }
 
-.popup-from .row-item{
+.popup-form .row-item{
     display: flex;
     flex-direction: column;
-    gap:3px;
+    gap:0px;
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 .row-item input[type="text"],textarea,input[type="Number"]{
     padding: 10px;
@@ -37,7 +37,9 @@
 }
 .update-btn{
     max-width: 100%;
-    margin:20px 30px ;
+    margin-left:30px ;
+    margin-right:30px ;
+    margin-bottom:10px ;
     padding: 10px;
     background-color: tomato;
     border-radius: 20px;
@@ -51,17 +53,19 @@
 .row-item input[type="Number"]{
     width:40%;
 }
-.popup-from .category{
-    margin-bottom: 8px;
+.popup-form .category{
+    margin-bottom: 5px;
 }
-.popup-from .category p{
+.popup-form .category p{
+    padding-bottom: 5px;
     font-size: 1.2rem;
-    padding: 10px;
+    font-weight: 600;
+ 
     
 }
-.popup-from .category select{
+.popup-form .category select{
     max-width: 120px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     border:1px solid tomato;
     
