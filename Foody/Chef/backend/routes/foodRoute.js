@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage})
 
-//send data to the server
+//send data to the server  // data arrives to the /add endpoint will be handled by the food router using add food function
 foodRouter.post("/add",upload.single("image"),addFood)
 foodRouter.get("/list",listFood)
 foodRouter.post("/remove",removeFood)

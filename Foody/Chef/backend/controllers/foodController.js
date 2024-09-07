@@ -32,7 +32,7 @@ const addFood  = async(req,res) => {
 const listFood = async(req,res) => {
     try {
         const foods = await foodModel.find({}); //find all the foods in db
-        res.json({success:true,data:foods})
+        res.json({success:true,data:foods}) //send the response as the data
     } catch (error) {
         console.log(error);
         res.json({success:true,message:"Error"})
@@ -46,7 +46,7 @@ const removeFood = async(req,res) =>{
         const food = await foodModel.findById(req.body.id); //getting the id of the food to be reomoved
         fs.unlink(`uploads/${food.image}`,()=>{}) //deleting image from the uploads folder
 
-        await foodModel.findByIdAndDelete(req.body.id); //deleting image from the database
+        await foodModel.findByIdAndDelete(req.body.id); //deleting food from the database
         res.json({success:true,message:"Food Removed"})
     } catch (error) {
         console.log(error);

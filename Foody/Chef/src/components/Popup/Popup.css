@@ -1,0 +1,76 @@
+.popup-container{
+    display: flex;
+    width: 40%;
+    padding:30px 40px;
+    
+}
+.popup-from{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #e3e3e36d;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);;
+    background-color: #fff;
+}
+.popup-from label{
+    font-size: 1.2rem;
+    padding: 0px px;
+    align-items: left;
+    margin: 10px 0px;
+    font-weight: 600;
+    
+}
+
+.popup-from .row-item{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+.row-item input[type="text"],textarea,input[type="Number"]{
+    padding: 10px;
+    border-radius: 15px;
+    border:1px solid tomato;
+}
+.update-btn{
+    max-width: 100%;
+    margin:20px 30px ;
+    padding: 10px;
+    background-color: tomato;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    transition: 0.3s ease;  
+    cursor:pointer
+}
+
+.row-item input[type="Number"]{
+    width:40%;
+}
+.popup-from .category{
+    margin-bottom: 8px;
+}
+.popup-from .category p{
+    font-size: 1.2rem;
+    padding: 10px;
+    
+}
+.popup-from .category select{
+    max-width: 120px;
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid tomato;
+    
+}
+/*.popup-from input[type="text"],input[type="textarea"],input[type="Number"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border:1px solid tomato;
+    margin: 15px 20px;
+}*/
+
