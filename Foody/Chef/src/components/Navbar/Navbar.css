@@ -3,12 +3,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 4%;
+    box-shadow:  2px 4px 10px #aaaaaa;
 }
 .logo-content h3{
     color: #555555;
 }
 .navbar .logo{
     width: 140px;
+}
+.navbar img{
+    width: 50px;
+    cursor: pointer;
 }
 
 @media (max-width:663px){

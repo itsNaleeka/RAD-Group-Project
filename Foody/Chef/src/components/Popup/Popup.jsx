@@ -85,7 +85,7 @@ const Popup = ({setUpdateSection, selectedFood, fetchList}) => {
             <p>Category</p>
             <select onChange={onChangeHandle} name="category" value={data.category}>
                 <option value='Salad'>Salad</option>
-                <option value='Rolls'>Rolls</option>
+                <option value='Chicked'>Chicken</option>
                 <option value='Deserts'>Deserts</option>
                 <option value='Sandwich'>Sandwich</option>
                 <option value='Cake'>Cake</option>
@@ -94,8 +94,11 @@ const Popup = ({setUpdateSection, selectedFood, fetchList}) => {
                 <option value='Noodles'>Noodles</option>
             </select>
         </div>
+        <div className="buttons">
         <button type='submit' className='update-btn'>Update</button>
-        <button onClick={handleUpdateClick}  className='update-btn'>cancel</button>
+        <button onClick={handleUpdateClick}  className='cancel-btn'>Cancel</button>
+        </div>
+        
     </form>
   
 </div>

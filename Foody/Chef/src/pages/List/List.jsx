@@ -56,7 +56,7 @@ const List = () => {
             <div className="popup-overlay" onClick={()=>setUpdateSection(false)}></div>
             <div className="popup-class">
             
-            <Popup setUpdateSection= {setUpdateSection} selectedFood={selectedFood} fetchList={fetchList}/>
+            <Popup setUpdateSection = {setUpdateSection} selectedFood={selectedFood} fetchList={fetchList}/>
           </div>
           </>
         )
@@ -68,7 +68,7 @@ const List = () => {
           <b>Image</b>
           <b>Name</b>
           <b>Category</b>
-          <b>Price</b>
+          <b>Price ($)</b>
           <b>Action</b>
         </div>
         {list.map((item,index)=>{
