@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4%;
+}
+.navbar .logo {
+  width: max(10%, 135px);
+}
+.navbar .profile {
+  width: 60px;
+}
+.logo-content h4 {
+  color: #555555;
+}
+.nameProfile h5 {
+  color: #555555;
+}
