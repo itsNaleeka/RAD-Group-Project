@@ -1,77 +1,74 @@
 .list-table-format {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr; /* Default 12 columns */
-    align-items: center;
-    gap: 20px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
-    width: 120%; /* Ensure the grid takes up full width */
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 15px;
+  border: 1px solid #cacaca;
+  font-size: 13px;
+  width: 120%;
+  box-sizing: border-box;
 }
 
 .topic {
-    font-size: large;
-    margin: 40px;
+  font-size: large;
+  margin: 40px;
 }
 
 .list-table-format.title {
-    align-items: center;
-    background-color: #f9f9f9;
+  align-items: center;
+  background-color: #f9f9f9;
 }
 
-/* For screens smaller than 900px, reduce the number of columns */
 @media (max-width: 1100px) {
-    .list-table-format {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 6 columns */
-        gap: 10px; /* Adjust gap for smaller screens */
-    }
+  .list-table-format {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
 }
 
-/* For screens smaller than 900px, reduce the number of columns */
 @media (max-width: 900px) {
-    .list-table-format {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6 columns */
-        gap: 10px; /* Adjust gap for smaller screens */
-    }
+  .list-table-format {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
 }
 
-/* For screens smaller than 600px, stack items vertically */
 @media (max-width: 700px) {
-    .list-table-format {
-        grid-template-columns: 1fr 1fr 1fr 1fr; /* 2 columns */
-        gap: 5px;
-    }
+  .list-table-format {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+  }
 
-    .list-table-format.title {
-        display: none; /* Hide titles on small screens */
-    }
+  .list-table-format.title {
+    display: none;
+  }
 }
 
 .btnchange {
-    border: 0.5px solid black;
-    padding: 2px 2px;
-    background-color: #e7d6d6;
-    color: #6d6d6d;
-    cursor: pointer;
-    border-radius: 6px;
-    width: max(30%, 40px);
-    transition-duration: 0.3s;
-    justify-content: center;
+  border: 0.5px solid black;
+  padding: 2px 2px;
+  background-color: #e7d6d6;
+  color: #6d6d6d;
+  cursor: pointer;
+  border-radius: 6px;
+  width: max(30%, 40px);
+  transition-duration: 0.3s;
+  justify-content: center;
 }
 
 .btnchange.active {
-    background-color: #888;
-    border-color: tomato;
+  background-color: #888;
+  border-color: tomato;
 }
 
 .btnchange:hover {
-    background-color: tomato; /* Change background color on hover */
-    color: #333; /* Change text color on hover */
-    border-color: #888; /* Change border color on hover */
+  background-color: tomato;
+  color: #333;
+  border-color: #888;
 }
 
 .cursor {
-    cursor: pointer;
-    color: red;
+  cursor: pointer;
+  color: red;
 }

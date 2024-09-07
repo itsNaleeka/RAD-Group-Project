@@ -12,7 +12,7 @@ const Add = () => {
     date: "",
     time: "",
     table: "",
-    category: "Cake", 
+    category: "Cake",
     price: "",
     description: "",
     members: "",
@@ -26,38 +26,39 @@ const Add = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
-    const formData = new FormData();    //convert string type form data to suitable types
-    formData.append("name",data.name)
-    formData.append("email",data.email)
-    formData.append("phone",data.phone)
-    formData.append("date",data.date)
-    formData.append("time",data.time)
-    formData.append("table",Number(data.table))
-    formData.append("category",data.category)
-    formData.append("price",Number(data.price))
-    formData.append("description",data.description)
-    formData.append("members",Number(data.members))
+    const formData = new FormData(); //convert string type form data to suitable types
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("phone", data.phone);
+    formData.append("date", data.date);
+    formData.append("time", data.time);
+    formData.append("table", Number(data.table));
+    formData.append("category", data.category);
+    formData.append("price", Number(data.price));
+    formData.append("description", data.description);
+    formData.append("members", Number(data.members));
 
     const response = await axios.post(`${url}/api/reservation/add`, formData); // Send the data object directly
-      if (response.data.success) {
-        setData({                         // set form empty after submit
-          name: "",
-          email: "",
-          phone: "",
-          date: "",
-          time: "",
-          table: "",
-          category: "", 
-          price: "",
-          description: "",
-          members: ""
-        });
-        toast.success(response.data.message);
-        console.log(response.data.data);
-      } else {
-        toast.error(response.data.message);
-      }
-    };
+    if (response.data.success) {
+      setData({
+        // set form empty after submit
+        name: "",
+        email: "",
+        phone: "",
+        date: "",
+        time: "",
+        table: "",
+        category: "",
+        price: "",
+        description: "",
+        members: "",
+      });
+      toast.success(response.data.message);
+      console.log(response.data.data);
+    } else {
+      toast.error(response.data.message);
+    }
+  };
 
   return (
     <div className="center-container">
@@ -92,17 +93,19 @@ const Add = () => {
           <div className="add-product-name flex-col">
             <p>Phone Number</p>
             <input
-            onChange={onChangeHandler}
-            value={data.phone.startsWith("+94") ? data.phone : `+94${data.phone}`}
-            type="text"
-            pattern="(\+94)?[0-9]{9,12}"
-            name="phone"
-            maxLength={12}
-            placeholder="+94 75 896 4519"
-            required
+              onChange={onChangeHandler}
+              value={
+                data.phone.startsWith("+94") ? data.phone : `+94${data.phone}`
+              }
+              type="text"
+              pattern="(\+94)?[0-9]{9,12}"
+              name="phone"
+              maxLength={12}
+              placeholder="+94 75 896 4519"
+              required
             />
           </div>
-  
+
           <div className="add-product-name flex-col">
             <p>Date</p>
             <input
@@ -118,11 +121,7 @@ const Add = () => {
           <div className="add-category-price">
             <div className="add-product-name flex-col">
               <p>Time</p>
-              <select
-                onChange={onChangeHandler}
-                value={data.time}
-                name="time"
-              >
+              <select onChange={onChangeHandler} value={data.time} name="time">
                 <option value="09.00-10.00 a.m">09.00-10.00 a.m</option>
                 <option value="10.00-11.00 a.m">10.00-11.00 a.m</option>
                 <option value="11.00-12.00 a.m">11.00-12.00 a.m</option>

@@ -1,57 +1,55 @@
 .list-table-format-table {
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr; 
-    align-items: center;
-    gap: 30px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
-    width: 600px; /* Ensure the grid takes up full width */
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  align-items: center;
+  gap: 30px;
+  padding: 12px 15px;
+  border: 1px solid #cacaca;
+  font-size: 13px;
+  width: 600px;
+  box-sizing: border-box;
 }
 
 .formmore {
-     gap: 20px;
-     height: 300px;
+  gap: 20px;
+  height: 300px;
 }
 
-.timemore select{
-    padding: 10px;
-    border-radius: 10px;
-    border:1px solid tomato;
+.timemore select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid tomato;
 }
 
 .topic-table {
-    font-size: large;
-    margin: 40px;
+  font-size: large;
+  margin: 40px;
 }
 
 .list-table-format-table.title {
-    align-items: center;
-    background-color: #f9f9f9;
+  align-items: center;
+  background-color: #f9f9f9;
 }
 
-/* For screens smaller than 900px, reduce the number of columns */
 @media (max-width: 900px) {
-    .list-table-format-table {
-        grid-template-columns: 1.5fr 1.5fr 1.5fr; /* 6 columns */
-        gap: 10px; /* Adjust gap for smaller screens */
-        width: 450px;
-    }
+  .list-table-format-table {
+    grid-template-columns: 1.5fr 1.5fr 1.5fr;
+    gap: 10px;
+    width: 450px;
+  }
 }
 
-/* For screens smaller than 600px, stack items vertically */
 @media (max-width: 700px) {
-    .list-table-format-table {
-        grid-template-columns: 1fr 1fr 1fr; /* 2 columns */
-        gap: 7.5px;
-        width: 350px;
-    }
+  .list-table-format-table {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 7.5px;
+    width: 350px;
+  }
 }
 
-@media(max-width: 600px) {
-    .list-table-format-table {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 5px;
-    }
+@media (max-width: 600px) {
+  .list-table-format-table {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+  }
 }
