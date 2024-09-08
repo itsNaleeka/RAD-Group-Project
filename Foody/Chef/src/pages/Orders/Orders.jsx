@@ -11,11 +11,22 @@ const Orders =() => {
   const fetchAllOrders = async ()=>{
     const response = await axios.get(url+"/api/order/list"); //API call
     if(response.data.success){
-      console.log(response.data.data)
+      //console.log(response.data.data)
       setOrders(response.data.data);
     }
     else{
-      toast.error("Error")
+      toast.error("Error");
+    }
+  }
+
+  //remove completed orders
+  const removeOrders = async(orderID) =>{
+    const response = await axios.post(`${url}/api/order/remove`,{id:orderID});
+    if (response.data.success) {
+      setOrders(orders.filter((order) => order._id !== orderID));
+      toast.success(response.data.message);
+    } else {
+      toast.error("Error");
     }
   }
 
@@ -51,20 +62,25 @@ const Orders =() => {
               </div>
               <p className='amounts'>Items : {order.items.length}</p>
               <p className='amounts'>${order.amount}</p>
-              <select>
+              <select onChange={(e)=>{
+                if(e.target.value === "Order Complete"){
+                  removeOrders(order._id);
+                }
+              }}>
               <option value="Food-Processing">Food-Processing</option>
-              <option value="Out for Delivery">Out for Delivery</option>
-              <option value="Delivered">Delivered</option>
+              <option value="Order Complete">Out for Delivery</option>
+        
             
             </select>
+            <div className="side-image">
+              sdsd
+            </div>
             
             </div>
         ))}
         
         </div>
-        <div className="side-image">
-              sdsd
-            </div>
+        
         </div>
         
       
