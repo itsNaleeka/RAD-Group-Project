@@ -1,0 +1,66 @@
+/* *{
+    box-sizing: border-box;
+}
+body{
+    background-color: aliceblue;
+    display:flex
+}
+/* .tablecontainer table thead tr th{ */
+/* .tablecontainer{
+    min-width:150px;
+    background-color: aqua;
+    border-color: black;
+
+}
+  */
+
+
+
+  * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+    margin: 0; /* Removes default body margin */
+    display: flex;
+    justify-content: center; /* Centers the table horizontally */
+    align-items: center; /* Centers the table vertically */
+    min-height: 100vh; /* Makes sure the body takes full height */
+}
+
+.tablecontainer {
+    width: 100%; /* Table takes up full width of the viewport */
+    max-width: 1200px; /* Restricts the table to a maximum width */
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto; /* Adds horizontal scrolling if content exceeds the max-width */
+}
+
+table {
+    width: 100%; /* Ensures the table spans the entire container */
+    border-collapse: collapse;
+    background-color: white;
+    table-layout: fixed; /* Ensures equal-width columns */
+}
+
+table th, table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center; /* Centers content horizontally */
+    vertical-align: middle; /* Centers content vertically */
+    width: calc(100% / 7); /* Ensures equal width for all columns */
+    overflow: hidden; /* Ensures long text doesn't overflow */
+    text-overflow: ellipsis; /* Adds '...' to clipped text */
+    white-space: nowrap; /* Keeps text on a single line */
+}
+
+thead {
+    background-color: lightgray;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
