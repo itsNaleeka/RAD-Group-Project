@@ -25,7 +25,7 @@ const Add = () => {
   };
 
   const onSubmitHandler = async (event) => {
-    event.preventDefault();
+    event.preventDefault();             // to prevent reloading of webpage when submit button is clicked
     const formData = new FormData(); //convert string type form data to suitable types
     formData.append("name", data.name);
     formData.append("email", data.email);

@@ -2,10 +2,10 @@ import reservationModel from "../models/reservationModel.js";
 
 // add table Reservation
 
-const addReservation = async (req, res) => {
+const addReservation = async (req, res) => {            // asynchronous function with response and request objects req - HTTP request data , res - data want to sent to frontend
   const reservation = new reservationModel(req.body);
   try {
-    await reservation.save();
+    await reservation.save();   // using this await keyword the next line never execute uptil this line is executed
     res.json({ success: true, message: "Reservation Added" });
   } catch (error) {
     console.log(error);
@@ -17,7 +17,7 @@ const addReservation = async (req, res) => {
 
 const listReservation = async (req, res) => {
   try {
-    const reservations = await reservationModel.find({});
+    const reservations = await reservationModel.find({});          // find all - {}
     res.json({ success: true, data: reservations });
   } catch (error) {
     console.log(error);
@@ -30,7 +30,7 @@ const listReservation = async (req, res) => {
 const updateReservation = async (req, res) => {
   try {
     const { id, ...rest } = req.body;
-    const data = await reservationModel.updateOne({ _id: id }, rest);
+    await reservationModel.updateOne({ _id: id }, rest);
     res.json({ success: true, message: "Reservation Updated" });
   } catch (error) {
     console.log(error);
