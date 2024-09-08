@@ -1,0 +1,162 @@
+
+@media (min-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  }
+
+h4{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-display:inherit;
+    font-size: 30px;
+}
+
+th{
+    background-color: rgb(49, 43, 43);
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  
+  h4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .ridersection{
+    display: inline-block;
+    width: 1200px;
+  }
+  
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"], input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #0e0707;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Action buttons */
+  button.edit {
+    background-color: #ffc107;
+    margin-right: 10px;
+  }
+  
+  button.edit:hover {
+    background-color: #e0a800;
+  }
+  
+  button.delete {
+    background-color: #dc3545;
+  }
+  
+  button.delete:hover {
+    background-color: #c82333;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    table, thead, tbody, th, td, tr {
+      display:-ms-inline-flexbox;
+      width: 63%;
+    }
+  
+    thead {
+      display : none;
+    }
+  
+    th, td {
+      text-align: right;
+      position: relative;
+    }
+
+    tr {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+    }
+  
+    td {
+      text-align: right;
+      position: relative;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      width: 50%;
+      padding-right: 10px;
+      text-align: left;
+      font-weight: bold;
+    }
+  
+    button {
+      margin-bottom: 10px;
+    }
+  
+    
+  }
+  

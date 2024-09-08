@@ -1,0 +1,56 @@
+/* General Layout */
+.App{
+    background:white; /* Gradient background */
+    
+}
+  
+  .container2 {
+    display: flex;
+    padding-left: 0;
+  }
+  
+  .allcontent {
+    display: flex;
+  }
+
+  
+  
+  /* Adjust layout for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+       /* Reduced padding for mobile */
+      flex-direction: column; /* Stack items vertically */
+    }
+  
+    .allcontent {
+      flex-direction: column; /* Stack items vertically */
+      width: 100%;
+    }
+
+    .tablecontent{
+        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+    }
+  }
+  
+  /* Additional utility styles */
+  .hidden {
+    display: none;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  .sidearrange{
+    display: flex;
+  }
+

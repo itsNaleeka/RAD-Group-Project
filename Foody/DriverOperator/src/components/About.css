@@ -1,0 +1,53 @@
+.about-container {
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(105, 112, 134);
+
+  }
+
+  .Resturant{
+    box-shadow : 0 2px 4px rgba(0, 0, 0, 0, 0 , 0.1);
+  }
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    align-items: center;
+    padding-left: 20px;
+    color:rgb(227, 234, 238)
+
+  }
+  
+  .section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: aliceblue;
+    padding: 10px;
+  }
+  
+  .food-items-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .food-item {
+    flex: 1 1 30%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .food-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .food-item p {
+    font-size: 1em;
+  }
+  

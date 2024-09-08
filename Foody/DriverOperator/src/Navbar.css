@@ -1,0 +1,48 @@
+.navbar {
+    background-color: white;
+    padding: 3px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .vehicle {
+    height: 70px;
+    width : 70px;
+  }
+  
+  .navbar-menu a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+  }
+  
+  .navbar-menu a:hover {
+    text-decoration:none;
+  }
+  
+  .navbar-end {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    color: black;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .delivery{
+    width: 50px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .icon:hover {
+    color: #ddd; /* Change color on hover if desired */
+  }
+  

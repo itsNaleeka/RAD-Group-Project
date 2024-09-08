@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail {
+    margin: 5px 0;
+}
+
+.foody {
+    margin: 0;
+    color: orangered;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    font-size: 50px;
+}
