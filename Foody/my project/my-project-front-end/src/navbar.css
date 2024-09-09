@@ -38,3 +38,8 @@
 .nav-link:hover::before{
      width:100%;
 }
+.navbar{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./application.css";
+import bike from "./assets/bike.png"
 import axios from "axios";
 
 export function Application() {
@@ -86,8 +87,9 @@ export function Application() {
 
             {/* Form for updating an existing employee */}
             <div className="form-container sign-in">
-            <h1>Welcome  to Foody</h1>
-            
+            <h1>Welcome  to Foody!</h1>
+            <img src = {bike} alt="Foody Welcome" className="welcome-image" />
+            <h3>Meet the team behind your <br/>Taste</h3>
             
 
 
@@ -102,7 +104,8 @@ export function Application() {
                         <button onClick={() => SetVal(false)}>Welcome</button>
                     </div>
                     <div className="toggle-panel toggle-right">
-                        <h1>Foody Restaurant</h1>
+                        <h1>Foody Restaurant</h1><br/><br/>
+                        <h4>Experience our exceptional service and make every meal unforgettable at Foody Restaurant!</h4>
                         <button onClick={() => SetVal(true)}>Register Employee</button>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./application.css";
 import axios from "axios";
+import bike from "./assets/bike.png"
 
 export function EmployeeUpdate() {
     const url = "http://localhost:5000";
@@ -93,7 +94,7 @@ export function EmployeeUpdate() {
             {/* Form for creating a new employee */}
             <div className="form-container sign-up">
                 <form onSubmit={onSubmitHandler}>
-                    <h1>Register Employee</h1>
+                    <h1>Update Employee</h1>
                     <input type="text" placeholder="Employee ID" name="employee_id" onChange={handleOnChange} value={formdata.employee_id} />
                     <input type="text" placeholder="Name" name="name" onChange={handleOnChange} value={formdata.name} />
                     <input type="email" placeholder="Email" name="email" onChange={handleOnChange} value={formdata.email} />
@@ -107,8 +108,11 @@ export function EmployeeUpdate() {
 
             {/* Form for updating an existing employee */}
             <div className="form-container sign-in">
+            <h1>Welcome  to Foody!</h1>
             
-            <h1>Welcome to Foody!</h1>
+            <img src = {bike} alt="Foody Welcome" className="welcome-image" />
+            <h3>Meet the team behind your <br/>Taste</h3>
+            
 
 
             </div>
@@ -117,7 +121,8 @@ export function EmployeeUpdate() {
             <div className="toggle-container">
                 <div className="toggle">
                     <div className="toggle-panel toggle-left">
-                        <h1>Foody Restaurant</h1>
+                        <h1>Foody Restaurant</h1><br/><br/><br/>
+                        <h4>Please ensure that both the Employee ID and email address you provide are unique, as these are essential for maintaining accurate and secure records.</h4>
                         <button onClick={() => SetVal(false)}>Welcome</button>
                     </div>
                     <div className="toggle-panel toggle-right">

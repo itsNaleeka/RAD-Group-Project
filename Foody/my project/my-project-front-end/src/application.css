@@ -12,6 +12,7 @@ body{
   align-items: center;
   justify-content:center;
   height : 100vh ;
+  overflow:hidden
 }
 
 .container{
@@ -23,6 +24,7 @@ body{
   width:768px; 
   max-width:100%;
   min-height:600px;
+  
 }
 
 .container p{
@@ -89,9 +91,14 @@ body{
 }
 
 .sign-in{
+  
   left:0;
   width:50%;
   z-index:2;
+  display: flex; /* Add this */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; 
 }
 
 .container.active .sign-in{
@@ -100,6 +107,7 @@ body{
 }
 
 .sign-up{
+
   left:0;
   width:50%;
   opacity:0;
@@ -181,4 +189,9 @@ body{
 .toggle-right{
   right:0;
   transform: translateX(0);
+}
+
+.welcome-image{
+  height:50vh;
+  width:269px;
 }
