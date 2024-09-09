@@ -5,7 +5,7 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import './index.css'
 import { Navbar } from './navbar.jsx'
 import { NewTable } from './newTable.jsx'
-import { EmployeeUpdate } from './update.jsx'
+import { UpdateEmployee } from './update.jsx'
 import { Application } from './application.jsx'
 import { Hero } from './hero.jsx'
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         },
         {
             path:"update",
-            element:<EmployeeUpdate/>
+            element:<UpdateEmployee/>
         },
         {
           path:"hero",
