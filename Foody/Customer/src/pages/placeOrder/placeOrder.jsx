@@ -31,6 +31,7 @@ function PlaceOrder() {
 		event.preventDefault();
 		let orderItems = [];
 		food_list.map((item) => {
+			// checks if for each item on food_list , any of them are ordered by the customer 
 			if (cartItems[item._id] > 0) {
 				let itemInfo = item;
 				itemInfo["quantity"] = cartItems[item._id];
@@ -41,7 +42,6 @@ function PlaceOrder() {
 			Address: data,
 			items: orderItems,
 			amount: getTotalCartAmount() + 2,
-			// userId added
 			userID: token,
 		};
 		let response = await axios.post(url + "/api/order/place", orderData, {
@@ -50,7 +50,6 @@ function PlaceOrder() {
 
 		if (response.data.success) {
 			console.log("Order placed successfully");
-			// window.location.replace(session_url);
 			clearCart();
 			navigate("/success");
 		} else {

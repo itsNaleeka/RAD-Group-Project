@@ -8,7 +8,7 @@ import orderRouter from "./routes/orderRoute.js";
 
 //app config
 const app = express();
-const port = 4001;
+const port = 4000;
 
 //middleware
 app.use(express.json())  // request from backend to front will pass through this middleware

@@ -4,8 +4,9 @@ import { StoreContext } from "../../components/context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
-	const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
+	const { cartItems, food_list, setMenu, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
 	const navigate = useNavigate();
+	setMenu("cart");
 
 	return (
 		<div className="cart">
@@ -24,10 +25,9 @@ function Cart() {
 					if (cartItems[item._id] > 0) {
 						return (
 							<>
-								<div className="cart-item cart-table">
+								<div key={index} className="cart-item cart-table">
 									<img
 										src={url+"/images/"+item.image}
-										// alt={url+"/images/"+img}
 										className="item-img"
 									/>
 									<div className="item-name">{item.name}</div>
@@ -68,7 +68,7 @@ function Cart() {
 						<span className="text">total</span>
 						<span className="price">${getTotalCartAmount() + (getTotalCartAmount()===0 ? 0 : 2)}</span>
 					</div>
-					<button onClick={()=>navigate('/order')} className="checkout">proceed to Checkout</button>
+					<button onClick={ getTotalCartAmount() ? (()=>navigate('/order')): (()=> console.log("empty cart"))} className="checkout">proceed to Checkout</button>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
@@ -9,13 +9,16 @@ import "./App.css";
 import LoginPopup from "./components/loginPopup/LoginPopup";
 import Footer from "./components/footer/Footer";
 import SuccessPage from "./pages/successPage/SuccessPage";
+import { StoreContext } from "./components/context/StoreContext";
 
 const App = () => {
 	const [showLogin, setShowLogin] = useState(false);
 
 	return (
 		<>
-			{showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : null}
+			{showLogin ? 
+			<LoginPopup setShowLogin={setShowLogin} />
+			: null}
 			<div className="app">
 				<Navbar setShowLogin={setShowLogin} />
 				<Routes>
