@@ -5,13 +5,13 @@ import { useState } from "react";
 
 const Orders = () => {
   const url = "http://localhost:4000";
-  const [list, setList] = useState([]); // initialize with an empty array
+  const [list, setList] = useState([]); // initialize with an empty array using react usestate hook   
   const [data, setData] = useState({
     date: "",
     time: "",
   });
 
-  const onChangeHandler = (event) => {
+  const onChangeHandler = (event) => {    // arrow function with event as argument
     const name = event.target.name;
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));

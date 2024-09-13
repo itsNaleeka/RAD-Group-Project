@@ -109,6 +109,7 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
               value={rest.price}
               type="number"
               name="price"
+              min="1"
               placeholder="Rs.200"
               required
             />

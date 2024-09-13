@@ -10,7 +10,7 @@ const Add = () => {
     email: "",
     phone: "",
     date: "",
-    time: "",
+    time: "09.00-10.00 a.m",
     table: "",
     category: "Cake",
     price: "",
@@ -179,6 +179,7 @@ const Add = () => {
                 value={data.price}
                 type="number"
                 name="price"
+                 min="1"
                 placeholder="Rs.200"
                 required
               />

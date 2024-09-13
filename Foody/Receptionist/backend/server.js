@@ -1,8 +1,6 @@
 import express from "express"
 import cors from "cors"
-//import mongoose from "mongoose"
 import { connectDB } from "./config/db.js"
-//import foodRouter from "./routes/foodRoute.js"
 import reservationRouter from "./routes/reservationRoute.js"
 
 // In this server this structure is very important if it changes it can give errors
@@ -17,8 +15,6 @@ app.use(express.json());  // request from backend to front will pass through thi
 app.use(cors()); // to access backend from frontend  
 
 // api endpoints
-//app.use("/api/food",foodRouter) 
-//app.use("/images",express.static('uploads'))
 app.use("/api/reservation",reservationRouter)
 
 // root endpoints
