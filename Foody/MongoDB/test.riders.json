@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "66de8424f6e2d398f3cada4a"
+  },
+  "name": "Naleeka Kumarasinghe",
+  "nic": "200130001826",
+  "address": "Cedar Avenue 107",
+  "phone": "0711192003",
+  "vehicleType": "Van",
+  "vehicleNumber": "4654",
+  "createdAt": {
+    "$date": "2024-09-09T05:14:12.207Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-09T05:14:12.207Z"
+  },
+  "__v": 0
+}]

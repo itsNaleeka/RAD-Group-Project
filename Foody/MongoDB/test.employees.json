@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "66de823397cd97fb557b81e5"
+  },
+  "employee_id": 34,
+  "name": "kavi",
+  "email": "kavi@gmail.com",
+  "phoneNumber": "0987654321",
+  "hireDate": {
+    "$date": "2024-09-09T05:05:55.117Z"
+  },
+  "salary": "90000000",
+  "salarypay": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66de04dbd888359aeed993ce"
+  },
+  "employee_id": 455,
+  "name": "malintha",
+  "email": "malintha@gmail.com",
+  "phoneNumber": "0987654567",
+  "hireDate": {
+    "$date": "2024-09-08T20:11:07.813Z"
+  },
+  "salary": "45689",
+  "salarypay": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66dec2c7447b79b25e6a03b2"
+  },
+  "employee_id": 77,
+  "name": "saman",
+  "email": "saman@gmail.com",
+  "phoneNumber": "0778698564",
+  "hireDate": {
+    "$date": "2024-09-09T09:41:27.405Z"
+  },
+  "salary": "45000000",
+  "salarypay": false,
+  "__v": 0
+}]

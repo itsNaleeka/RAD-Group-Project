@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "66de99024de5cc0cece6b2f0"
+  },
+  "name": "Vegetable Curry",
+  "description": "A flavorful curry made with a variety of seasonal vegetables.",
+  "price": 12.75,
+  "image": "food_24.png",
+  "category": "Pure Veg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66de97d64de5cc0cece6b2e8"
+  },
+  "name": "Salmon with Lemon Butter Sauce",
+  "description": "Grilled salmon with a tangy lemon butter sauce, served with roasted vegetables",
+  "price": 22,
+  "image": "food_3.png",
+  "category": "Salad",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66de97f54de5cc0cece6b2ea"
+  },
+  "name": "Vegetarian Chili",
+  "description": "Hearty chili made with beans, vegetables, and spices",
+  "price": 10,
+  "image": "food_4.png",
+  "category": "Pure Veg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66de99baaa66de59ccdce137"
+  },
+  "name": "Spaghetti Bolognese",
+  "description": "A classic Italian pasta dish with a meat-based sauce",
+  "price": 17,
+  "image": "food_26.png",
+  "category": "Pasta",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66dea208515919d89f02ae85"
+  },
+  "name": "Pita Bread with Hummus",
+  "description": "A Middle Eastern dish made with pita bread and hummus",
+  "price": 11.25,
+  "image": "food_7.png",
+  "category": "Salad",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66de982c4de5cc0cece6b2ec"
+  },
+  "name": "Red Velvet Cake",
+  "description": "A moist, velvety cake with a deep red color, typically frosted with cream cheese frosting",
+  "price": 25,
+  "image": "food_18.png",
+  "category": "Cake",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66de98db4de5cc0cece6b2ee"
+  },
+  "name": "Grilled Chicken Breast",
+  "description": " A classic grilled chicken breast served with your choice of side dish",
+  "price": 15.5,
+  "image": "food_8.png",
+  "category": "Chicken",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66dea17d515919d89f02ae7f"
+  },
+  "name": "Chocolate Cake",
+  "description": "A rich and decadent chocolate cake",
+  "price": 13,
+  "image": "food_20.png",
+  "category": "Cake",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66dea1c0515919d89f02ae81"
+  },
+  "name": "Lasagna",
+  "description": "Layers of pasta sheets filled with meat sauce and cheese, baked to perfection",
+  "price": 20,
+  "image": "food_5.png",
+  "category": "Chicken",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66dea1e8515919d89f02ae83"
+  },
+  "name": "Vegetable Stir-Fry",
+  "description": "A healthy and flavorful dish made with stir-fried vegetables.\r\n\r\n",
+  "price": 7.5,
+  "image": "food_2.png",
+  "category": "Pure Veg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66debf23a75ee2d8cb5e92ec"
+  },
+  "name": "test food 1",
+  "description": "test description",
+  "price": 10,
+  "image": "food_15.png",
+  "category": "Deserts",
+  "__v": 0
+}]
