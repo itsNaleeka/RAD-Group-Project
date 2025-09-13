@@ -10,6 +10,7 @@
 body {
   min-height: 100vh;
   background-color: #fcfcfc;
+  overflow-x: hidden;
 }
 
 a {
@@ -23,12 +24,49 @@ hr {
   background-color: #a9a9a9;
 }
 
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .app-content {
   display: flex;
+  flex: 1;
+  min-height: calc(100vh - 80px);
+}
+
+.main-content {
+  flex: 1;
+  overflow-x: auto;
 }
 
 .flex-col {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .app-content {
+    flex-direction: column;
+  }
+  
+  body {
+    font-size: 14px;
+  }
 }

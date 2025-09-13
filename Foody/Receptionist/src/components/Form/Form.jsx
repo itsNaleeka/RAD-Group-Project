@@ -10,6 +10,8 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
           <AiOutlineCloseCircle />
         </div>
 
+        <h3>Edit Reservation</h3>
+
         <div className="newadd-product-name">
           <p>Customer Name</p>
           <input
@@ -22,7 +24,19 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
           />
         </div>
 
-        <div className="add-product-name flex-col">
+        <div className="newadd-product-name">
+          <p>Email</p>
+          <input
+            onChange={onChangeHandler}
+            value={rest.email}
+            type="email"
+            name="email"
+            placeholder="example@gmail.com"
+            required
+          />
+        </div>
+
+        <div className="newadd-product-name">
           <p>Phone Number</p>
           <input
             onChange={onChangeHandler}
@@ -36,7 +50,7 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
           />
         </div>
 
-        <div className="add-product-name flex-col">
+        <div className="newadd-product-name">
           <p>Date</p>
           <input
             onChange={onChangeHandler}
@@ -48,8 +62,8 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
           />
         </div>
 
-        <div className="add-category-price">
-          <div className="add-category flex-col">
+        <div className="newadd-category-price">
+          <div className="newadd-product-name">
             <p>Time</p>
             <select onChange={onChangeHandler} value={rest.time} name="time">
               <option value="09.00-10.00 a.m">09.00-10.00 a.m</option>
@@ -70,7 +84,7 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
             </select>
           </div>
 
-          <div className="add-product-name flex-col">
+          <div className="newadd-product-name">
             <p>Table ID</p>
             <input
               onChange={onChangeHandler}
@@ -86,8 +100,8 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
         </div>
 
         <div className="newadd-category-price">
-          <div className="newadd-category">
-            <p>Food Category</p>
+          <div className="newadd-product-name">
+            <p>Category</p>
             <select
               onChange={onChangeHandler}
               value={rest.category}
@@ -102,7 +116,7 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
             </select>
           </div>
 
-          <div className="newadd-price">
+          <div className="newadd-product-name">
             <p>Full Price</p>
             <input
               onChange={onChangeHandler}
@@ -123,11 +137,10 @@ const FormTable = ({ onSubmitHandler, onChangeHandler, handleclose, rest }) => {
             name="description"
             rows="6"
             placeholder="Write content here"
-            required
           ></textarea>
         </div>
 
-        <div className="add-product-name flex-col">
+        <div className="newadd-product-name">
           <p>Members</p>
           <input
             onChange={onChangeHandler}

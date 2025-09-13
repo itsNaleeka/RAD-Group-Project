@@ -103,7 +103,6 @@ const List = () => {
         <div className="list-table">
           <div className="list-table-format title">
             <b>Name</b>
-            <b>Email</b>
             <b>Phone Number</b>
             <b>Date</b>
             <b>Time</b>
@@ -120,7 +119,6 @@ const List = () => {
               return (
                 <div key={index} className="list-table-format">
                   <p>{item.name}</p>
-                  <p>{item.email}</p>
                   <p>{item.phone}</p>
                   <p>{item.date}</p>
                   <p>{item.time}</p>

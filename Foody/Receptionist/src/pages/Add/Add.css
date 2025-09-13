@@ -1,110 +1,179 @@
 .center-container {
-  width: max(70%);
+  width: 100%;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0px;
-  padding: 0px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 20px;
+  min-height: calc(100vh - 160px);
 }
+
 .add {
-  width: 90%;
-  margin-left: max(8%);
-  margin-right: max(15%);
-  margin-top: 10px;
-  color: #6d6d6d;
+  width: 100%;
+  max-width: 800px;
+  color: #333;
   font-size: 16px;
   flex-direction: column;
   align-items: center;
 }
+
 .add h3 {
   text-align: center;
+  color: #ff6b47;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
+
 .add textarea,
 select {
-  border-radius: 10px;
+  border-radius: 8px;
 }
+
 .add.form-contain {
   justify-content: center;
   padding-right: 0%;
 }
+
 .add form {
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
   flex-direction: column;
-  margin: 75px 150px 75px;
-  width: 70%;
-  padding: 30px;
-  padding-right: 20px;
-  border: 0px solid #a2a2a2;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  margin: 0;
+  width: 100%;
+  padding: 40px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
+
 .add-product-name,
 .add-product-description {
-  width: max(70%);
+  width: 100%;
 }
+
+.add-product-name p,
+.add-product-description p {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
 .add-product-name input,
 .add-product-description textarea {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid tomato;
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
 }
+
+.add-product-name input:focus,
+.add-product-description textarea:focus {
+  outline: none;
+  border-color: #ff6b47;
+  box-shadow: 0 0 0 3px rgba(255, 107, 71, 0.1);
+}
+
 .add-category-price {
-  display: flex;
-  width: max(70%);
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 20px;
 }
+
 .add-category-price select,
 .add-category-price input {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid tomato;
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
 }
+
+.add-category-price select:focus,
+.add-category-price input:focus {
+  outline: none;
+  border-color: #ff6b47;
+  box-shadow: 0 0 0 3px rgba(255, 107, 71, 0.1);
+}
+
 .add-btn {
-  width: max(30%);
+  width: 100%;
+  max-width: 200px;
   border: none;
-  padding: 10px;
-  background-color: tomato;
+  padding: 15px 30px;
+  background-color: #ff6b47;
   color: white;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
-@media (max-width: 1250px) {
-  .add-category-price {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: max(100%);
-    margin-left: max(30%);
-  }
+.add-btn:hover {
+  background-color: #e55a3b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 71, 0.3);
 }
 
-@media (max-width: 700px) {
-  .add {
-    width: 100%;
-  }
+.add-btn:active {
+  transform: translateY(0);
+}
 
-  .add-product-name,
-  .add-product-description {
-    width: max(100%);
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .center-container {
+    padding: 10px;
+    min-height: calc(100vh - 200px);
   }
+  
+  .add form {
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .add h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
   .add-category-price {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: max(100%);
-    margin-left: 0px;
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
+  
+  .add-product-name input,
+  .add-product-description textarea,
   .add-category-price select,
   .add-category-price input {
-    max-width: 100%;
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
   }
-
-  .add-button {
-    width: max(100%);
-  }
+  
   .add-btn {
-    margin-left: 0;
+    width: 100%;
+    max-width: none;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .center-container {
+    padding: 5px;
+  }
+  
+  .add form {
+    padding: 15px;
+  }
+  
+  .add h3 {
+    font-size: 1.3rem;
   }
 }

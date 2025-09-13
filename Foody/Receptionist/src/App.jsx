@@ -9,17 +9,29 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
-    <div>
-      <ToastContainer />
+    <div className="app">
+      <ToastContainer 
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Navbar />
       <hr />
       <div className="app-content">
         <Sidebar />
-        <Routes>
-          <Route path="/add" element={<Add />} />
-          <Route path="/" element={<List />} />
-          <Route path="/orders" element={<Orders />} />
-        </Routes>
+        <main className="main-content">
+          <Routes>
+            <Route path="/add" element={<Add />} />
+            <Route path="/" element={<List />} />
+            <Route path="/orders" element={<Orders />} />
+          </Routes>
+        </main>
       </div>
     </div>
   );
